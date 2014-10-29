@@ -26,7 +26,13 @@ public class ApiUploadScheduleThread extends TimerTask {
 			new UploadDeal().uploadApiKCB(config);
 		} else if(task.getTaskName().equals("订单下载")) {
 			new UploadDeal().uploadApiTrade(config);
-		}
+		} else if(task.getTaskName().equals("原始订单下载")) {
+			new UploadDeal().uploadYsApiTrade(config);
+		} else if(task.getTaskName().equals("标记修改")) {
+			new UploadDeal().uploadApiFlag(config);
+		} else if(task.getTaskName().equals("快递修改")) {
+			new UploadDeal().uploadApiLogistics(config);
+		} 
 		
 		logger.info(task.getTaskName() + "执行结束");
 	}
