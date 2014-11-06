@@ -8,13 +8,16 @@ import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
+import org.apache.log4j.Logger;
+
 import com.rs.model.Task;
 
 public class TaskDB {
+	static Logger logger = Logger.getLogger(TaskDB.class.getName());
 	public ArrayList<Task> getAllList(Connection conn){
 		ArrayList<Task> tasks = new ArrayList<Task>();
 		Task task = null;
-		String sql = "select id,task_name,table_name,start_time,task_type,valid,period,md5 from test.dbo.apiupload_task_info";
+		String sql = "select id,task_name,table_name,start_time,task_type,valid,period,md5 from apiupload_task_info";
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		try {
@@ -36,6 +39,7 @@ public class TaskDB {
 				tasks.add(task);
 			}
 		} catch (SQLException e) {
+			logger.error(e.getMessage());
 			e.printStackTrace();
 		}
 		return tasks;

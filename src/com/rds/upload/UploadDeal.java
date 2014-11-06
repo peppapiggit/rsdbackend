@@ -10,6 +10,7 @@ import org.apache.log4j.Logger;
 
 import com.rds.json.APiLogisticsJson;
 import com.rds.json.ApiFlagJson;
+import com.rds.json.ApiGoodsJson;
 import com.rds.json.ApiKcbJson;
 import com.rds.json.ApiSpJson;
 import com.rds.json.ApiTradeJson;
@@ -176,6 +177,37 @@ public class UploadDeal {
 			}
 		}
 	}
+	
+	//货品下载
+		public void uploadApiGoods(Config config) {
+			Connection conn = null;
+			CloseableHttpClient httpclient = null;
+			try {
+				conn = ConnectionSource.getConnection();
+				if (conn != null) {
+					httpclient = HttpClients.createDefault();
+					long startTime = System.currentTimeMillis();
+					new ApiGoodsJson().deal(httpclient, conn, config, "QueryPlatformGoodsInfo");
+					logger.info("耗时" + (System.currentTimeMillis() - startTime));
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				try {
+					httpclient.close();
+					try {
+						if (conn != null) {
+							conn.close();
+							conn = null;
+						}
+					} catch (SQLException e) {
+						e.printStackTrace();
+					}
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
 
 	// 快递修改
 	public void uploadApiLogistics(Config config) {

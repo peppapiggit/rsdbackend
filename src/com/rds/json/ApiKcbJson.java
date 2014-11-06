@@ -8,12 +8,15 @@ import java.sql.SQLException;
 import net.sf.json.JSONObject;
 
 import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.log4j.Logger;
 
 import com.rds.util.ApiUtil;
 import com.rds.util.CharacterUtil;
 import com.rs.model.Config;
 
 public class ApiKcbJson {
+	static Logger logger = Logger.getLogger(ApiKcbJson.class
+			.getName());
 	public void  deal(CloseableHttpClient httpclient,Connection conn, Config config,String method) {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -31,7 +34,6 @@ public class ApiKcbJson {
 				jsonObjRs.put("Qty", rs.getInt("kcs"));
 				id = rs.getInt("ID");
 				content = jsonObjRs.toString();
-				System.out.println(content);
 				this.dealApi(httpclient, content,id,conn, config,method);
 			}
 		} catch (Exception e) {
@@ -57,8 +59,7 @@ public class ApiKcbJson {
 		String sql = "update API_KCB  set ZT=1,APITIME=getdate(),HK = ?,HKMSG = ? where ID = ?";
 		PreparedStatement pstmt = null;
 		try {
-			String resInfo = CharacterUtil.unicodeToUtf8(returnInfo);
-			JSONObject jsonObject = (JSONObject)JSONObject.fromObject(resInfo);
+			JSONObject jsonObject = (JSONObject)JSONObject.fromObject(returnInfo);
 			pstmt = conn.prepareStatement(sql);
 			int returnCode = jsonObject.getInt("ResultCode");
 			pstmt.setInt(1, returnCode);
@@ -84,7 +85,9 @@ public class ApiKcbJson {
 		}
 	}
 	public void dealApi(CloseableHttpClient httpclient,String content,int id,Connection conn, Config config,String method) {
+		logger.info("发送内容" + content);
 		String returnInfo = new ApiUtil().sendContent(httpclient, content,config,method);
+		logger.info("接收内容" + returnInfo);
 		this.updateDB(id, conn, returnInfo);
 	}
 }

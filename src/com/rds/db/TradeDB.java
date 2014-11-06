@@ -3,52 +3,44 @@ package com.rds.db;
 import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+
+import org.apache.log4j.Logger;
 
 import com.rs.model.Trade;
 import com.rs.model.TradeDetail;
 import com.rs.model.TradeInfo;
 
 public class TradeDB {
+	static Logger logger = Logger.getLogger(TradeDB.class.getName());
 	public static void insertData(ArrayList<TradeInfo> tradeInfoes,Connection conn) {
 		String sqlTradeListInsert = "INSERT INTO API_TradeList(TradeNO,TradeNO2,WarehouseNO,RegTime,TradeTime,PayTime,ChkTime,StockOutTime,SndTime,LastModifyTime,TradeStatus,RefundStatus,"
 				+ "bInvoice,InvoiceTitle,InvoiceContent,NickName,SndTo,Country,Province,City,Town,Adr,Tel,Zip,ChargeType,SellSkuCount,GoodsTotal,PostageTotal,FavourableTotal,"
 				+ "AllTotal,LogisticsCode,PostID,CustomerRemark,Remark,ShopType,ShopName,TradeFlag,ChkOperatorName) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?"
 				+ ",?,?,?,?,?,?,?,?,?,?,?,?)";
-		String sqlQueryTradeList = "select count(1) cnt from API_TradeList where TradeNO = ?";
-		String sqlTradeListUpdate = "UPDATE API_TradeList SET  TradeNO=?,TradeNO2=?,WarehouseNO=?,RegTime=?,TradeTime=?,PayTime=?,ChkTime=?,StockOutTime=?,SndTime=?,LastModifyTime=?,TradeStatus=?,"
-				+ "RefundStatus=?,bInvoice=?,InvoiceTitle=?,InvoiceContent=?,NickName=?,SndTo=?,Country=?,Province=?,City=?,Town=?,Adr=?,Tel=?,Zip=?,ChargeType=?,SellSkuCount=?,GoodsTotal=?,PostageTotal=?,"
-				+ "FavourableTotal=?,AllTotal=?,LogisticsCode=?,PostID=?,CustomerRemark=?,Remark=?,ShopType=?,ShopName=?,TradeFlag=?,ChkOperatorName=? where TradeNO=?";
+		String sqlTradeListDelete = "delete from API_TradeList where TradeNO = ?";
 		String sqlDetailListInsert = "INSERT INTO API_DetailList(TradeNO,SkuCode,SkuName,PlatformGoodsCode,PlatformGoodsName,PlatformSkuCode,PlatformSkuName,SellCount,SellPrice,DiscountMoney,bGift) values"
 				+ "(?,?,?,?,?,?,?,?,?,?,?)";
-		String sqlQueryDetailList = "select count(1) cnt from API_DetailList where TradeNO = ? and SkuCode = ?";
-		String sqlDetailListUpdate ="update API_DetailList set TradeNO=?,SkuCode=?,SkuName=?,PlatformGoodsCode=?,PlatformGoodsName=?,PlatformSkuCode=?,PlatformSkuName=?,SellCount=?,SellPrice=?,DiscountMoney=?,bGift=? where TradeNO = ? and SkuCode = ?";
+		String sqlDetailListDelete = "delete from API_DetailList where TradeNO = ?";
 		PreparedStatement pstmt = null;
 		PreparedStatement pstmt1 = null;
 		PreparedStatement pstmt2 = null;
-		ResultSet rs = null;
 		for(int i=0;i<tradeInfoes.size();i++) {
 			TradeInfo tradeInfo = tradeInfoes.get(i);
 			Trade trade = tradeInfo.getTrade();
 			ArrayList<TradeDetail> tradeDetails = tradeInfo.getTradeDetails();
 			try {
-				pstmt1= conn.prepareStatement(sqlQueryTradeList);
+				pstmt1= conn.prepareStatement(sqlTradeListDelete);
 				pstmt1.setString(1, trade.getTradeNO());
-				rs = pstmt1.executeQuery();
-				int count = 0;
-				while(rs.next()) {
-					count = rs.getInt("cnt");
-				}
-				if(count ==1) {
-					//更新
-					pstmt = conn.prepareStatement(sqlTradeListUpdate);
-				} else {
-					pstmt = conn.prepareStatement(sqlTradeListInsert);
-				}
+				pstmt1.executeUpdate();
+				pstmt2 = conn.prepareStatement(sqlDetailListDelete);
+				pstmt2.setString(1, trade.getTradeNO());
+				pstmt2.executeUpdate();
+				
+				pstmt = conn.prepareStatement(sqlTradeListInsert);
 				
 				pstmt.setString(1, trade.getTradeNO());
 				pstmt.setString(2, trade.getTradeNO2());
@@ -121,29 +113,11 @@ public class TradeDB {
 				pstmt.setString(36, trade.getShopName());
 				pstmt.setString(37, trade.getTradeFlag());
 				pstmt.setString(38, trade.getChkOperatorName());
-				if(count ==1) {
-					//更新
-					pstmt.setString(39, trade.getTradeNO());
-				}
 				pstmt.executeUpdate();
 				for(int j=0;j<tradeDetails.size();j++) {
 					TradeDetail tradeDetail = tradeDetails.get(j);
-					pstmt2 = conn.prepareStatement(sqlQueryDetailList);
-					pstmt2.setString(1, trade.getTradeNO());
-					pstmt2.setString(2, tradeDetail.getSkuCode());
-					rs = pstmt2.executeQuery();
-					int countDetail = 0;
-					while(rs.next()) {
-						countDetail = rs.getInt("cnt");
-					}
-					if(countDetail ==1) {
-						//更新
-						pstmt = conn.prepareStatement(sqlDetailListUpdate);
-					} else {
 						//插入
-						pstmt = conn.prepareStatement(sqlDetailListInsert);
-					}
-					
+					pstmt = conn.prepareStatement(sqlDetailListInsert);
 					pstmt.setString(1, trade.getTradeNO());
 					pstmt.setString(2, tradeDetail.getSkuCode());
 					pstmt.setString(3, tradeDetail.getSkuName());
@@ -155,14 +129,10 @@ public class TradeDB {
 					pstmt.setBigDecimal(9, new BigDecimal(tradeDetail.getSellPrice()));
 					pstmt.setBigDecimal(10, new BigDecimal(tradeDetail.getDiscountMoney()));
 					pstmt.setInt(11, Integer.parseInt(tradeDetail.getbGift()));
-					if(countDetail ==1) {
-						//更新
-						pstmt.setString(12, trade.getTradeNO());
-						pstmt.setString(13, tradeDetail.getSkuCode());
-					}
 					pstmt.executeUpdate();
 				}
 			} catch (Exception e) {
+				logger.error(e.getMessage());
 				e.printStackTrace();
 			} finally {
 				if(pstmt != null) {
@@ -185,14 +155,6 @@ public class TradeDB {
 					try {
 						pstmt2.close();
 						pstmt2 = null;
-					} catch (SQLException e) {
-						e.printStackTrace();
-					}
-				}
-				if(rs != null) {
-					try {
-						rs.close();
-						rs = null;
 					} catch (SQLException e) {
 						e.printStackTrace();
 					}

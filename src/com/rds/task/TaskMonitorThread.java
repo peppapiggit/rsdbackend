@@ -12,6 +12,8 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.Timer;
 
+import org.apache.log4j.Logger;
+
 import com.rds.db.TaskDB;
 import com.rds.schedule.ApiUploadSchedule;
 import com.rds.util.ConnectionSource;
@@ -20,6 +22,7 @@ import com.rs.model.Task;
 import com.rs.model.TaskTimer;
 
 public class TaskMonitorThread implements Runnable {
+	static Logger logger = Logger.getLogger(TaskMonitorThread.class.getName());
 	public static Map<Integer, TaskTimer> taskMapper = new HashMap<Integer, TaskTimer>();
 	Config config = null;
 	public TaskMonitorThread(Config config) {
@@ -32,6 +35,7 @@ public class TaskMonitorThread implements Runnable {
 			config.setApiUrl(p.getProperty("apiUrl"));
 			config.setSellerID(p.getProperty("SellerID"));
 			config.setInterfaceID(p.getProperty("InterfaceID"));
+			config.setKey(p.getProperty("key"));
 			this.config = config;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -51,7 +55,7 @@ public class TaskMonitorThread implements Runnable {
 	@Override
 	public void run() {
 		while (true) {
-			System.out.println("任务监控线程启动");
+			logger.info("任务监控线程启动");
 			Connection conn = null;
 			try {
 				// 查询任务
@@ -70,15 +74,15 @@ public class TaskMonitorThread implements Runnable {
 								// 判断是否置为无效
 								if (task.getValid() == 0) {
 									// 取消任务
-									System.out.println("存在任务置为无效,任务id"
-											+ task.getId());
+									logger.info("存在任务置为无效,任务名称"
+											+ task.getTaskName());
 									taskMapper.remove(task.getId());
 									ApiUploadSchedule.tasksCancle(task,
 											taskTimer.getTimer());
 								} else {
 									// 取消任务，添加新任务
-									System.out.println("修改存在任务,任务id"
-											+ task.getId());
+									logger.info("修改存在任务,任务名称"
+											+ task.getTaskName());
 									taskMapper.remove(task.getId());
 									TaskTimer task1 = new TaskTimer();
 									Timer timer = new Timer();
@@ -95,7 +99,7 @@ public class TaskMonitorThread implements Runnable {
 							// 判断是否置为无效，有效为新增任务
 							if (task.getValid() == 1) {
 								// 取消任务
-								System.out.println("新增任务,任务id" + task.getId());
+								logger.info("新增任务,任务名称" + task.getTaskName());
 								TaskTimer taskTimer = new TaskTimer();
 								Timer timer = new Timer();
 								taskTimer.setMd5(task.getMd5());

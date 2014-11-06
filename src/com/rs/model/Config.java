@@ -4,6 +4,14 @@ public class Config {
 	private String apiUrl;
 	private String SellerID;
 	private String InterfaceID;
+	private String key;
+	
+	public String getKey() {
+		return key;
+	}
+	public void setKey(String key) {
+		this.key = key;
+	}
 	public String getApiUrl() {
 		return apiUrl;
 	}

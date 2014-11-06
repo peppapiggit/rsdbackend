@@ -12,13 +12,15 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
+import org.apache.log4j.Logger;
 
 import com.rs.model.Config;
 
 public class ApiUtil {
+	static Logger logger = Logger.getLogger(ApiUtil.class.getName());
 	public String sendContent(CloseableHttpClient httpclient,String content, Config config,String method) {
 		String returnInfo = "";
-		String signSour = content + "12345";
+		String signSour = content + config.getKey();
 		String md5 = MD5Util.MD5(signSour);
 		String base64 = Base64Util.getBASE64(md5);
 		String sign;
@@ -48,4 +50,6 @@ public class ApiUtil {
 		}
 		return returnInfo;
 	}
+	
+	
 }

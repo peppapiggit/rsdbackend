@@ -3,60 +3,49 @@ package com.rds.db;
 import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
-import com.rs.model.TradeDetail;
+import org.apache.log4j.Logger;
+
 import com.rs.model.YsTrade;
 import com.rs.model.YsTradeDetail;
 import com.rs.model.YsTradeInfo;
 
 public class YsTradeDB {
+	static Logger logger = Logger.getLogger(YsTradeDB.class.getName());
 	public static void insertData(ArrayList<YsTradeInfo> ysTradeInfoes,Connection conn) {
 		String sqlYsTradeListInsert = "INSERT INTO API_YS_TradeList(TradeNO,CurStatus,ShopType,ShopName,NickName,CustomerName,PayID,RefundStatus,Country,Province,City,Town,Adr,Zip,Phone,Email,"
 				+ "CustomerRemark,Remark,PostFee,GoodsFee,TotalMoney,FavourableMoney,ChargeType,InvoiceTitle,InvoiceContent,CreateTime,LastModifyTime,TradeTime,PayTime) "
 				+ "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-		String sqlQueryYsTradeList = "select count(1) cnt from API_YS_TradeList where TradeNO = ?";
-		String sqlYsTradeListUpdate = "UPDATE API_YS_TradeList SET  TradeNO=?,CurStatus=?,ShopType=?,ShopName=?,NickName=?,CustomerName=?,PayID=?,RefundStatus=?,Country=?,Province=?,City=?,Town=?,"
-				+ "Adr=?,Zip=?,Phone=?,Email=?,CustomerRemark=?,Remark=?,PostFee=?,GoodsFee=?,TotalMoney=?,FavourableMoney=?,ChargeType=?,InvoiceTitle=?,InvoiceContent=?,CreateTime=?,"
-				+ "LastModifyTime=?,TradeTime=?,PayTime=? where TradeNO=?";
+		String sqlYsTradeListDelete = "delete from API_YS_TradeList where TradeNO = ?";
 		String sqlYsDetailListInsert = "INSERT INTO API_YS_DetailList(TradeNO,OrderNO,GoodsNO,GoodsName,SpecCode,SpecName,GoodsCount,Price,GoodsTotal,DiscountMoney,Remark,RefundStatus) values"
 				+ "(?,?,?,?,?,?,?,?,?,?,?,?)";
-		String sqlQueryYsDetailList = "select count(1) cnt from API_YS_DetailList where TradeNO = ? and OrderNo = ?";
-		String sqlYsDetailListUpdate ="update API_YS_DetailList set TradeNO=?,OrderNO=?,GoodsNO=?,GoodsName=?,SpecCode=?,SpecName=?,GoodsCount=?,Price=?,GoodsTotal=?,DiscountMoney=?,Remark=?,RefundStatus=? where TradeNO = ? and OrderNO = ?";
+		String sqlYsDetailListDelete = "delete from API_YS_DetailList where TradeNO = ?";
 		PreparedStatement pstmt = null;
 		PreparedStatement pstmt1 = null;
 		PreparedStatement pstmt2 = null;
-		ResultSet rs = null;
 		for(int i=0;i<ysTradeInfoes.size();i++) {
 			YsTradeInfo ysTradeInfo = ysTradeInfoes.get(i);
 			YsTrade ysTrade = ysTradeInfo.getYsTrade();
 			ArrayList<YsTradeDetail> ysTradeDetails = ysTradeInfo.getYsTradeDetails();
 			try {
-				pstmt1= conn.prepareStatement(sqlQueryYsTradeList);
+				pstmt1= conn.prepareStatement(sqlYsTradeListDelete);
 				pstmt1.setString(1, ysTrade.getTradeNO());
-				rs = pstmt1.executeQuery();
-				int count = 0;
-				while(rs.next()) {
-					count = rs.getInt("cnt");
-				}
-				if(count ==1) {
-					//更新
-					pstmt = conn.prepareStatement(sqlYsTradeListUpdate);
-				} else {
-					pstmt = conn.prepareStatement(sqlYsTradeListInsert);
-				}
-				
+				pstmt1.executeUpdate();
+				pstmt2 = conn.prepareStatement(sqlYsDetailListDelete);
+				pstmt2.setString(1, ysTrade.getTradeNO());
+				pstmt2.executeUpdate();
+				pstmt = conn.prepareStatement(sqlYsTradeListInsert);
 				pstmt.setString(1, ysTrade.getTradeNO());
 				pstmt.setString(2, ysTrade.getCurStatus());
 				pstmt.setString(3, ysTrade.getShopType());
-				pstmt.setString(4, ysTrade.getTradeNO());
-				pstmt.setString(5, ysTrade.getShopName());
-				pstmt.setString(6, ysTrade.getNickName());
-				pstmt.setString(7, ysTrade.getCustomerName());
+				pstmt.setString(4, ysTrade.getShopName());
+				pstmt.setString(5, ysTrade.getNickName());
+				pstmt.setString(6, ysTrade.getCustomerName());
+				pstmt.setString(7, ysTrade.getPayID());
 				pstmt.setInt(8, Integer.parseInt(ysTrade.getRefundStatus()));
 				pstmt.setString(9, ysTrade.getCountry());
 		        pstmt.setString(10, ysTrade.getProvince());
@@ -97,28 +86,12 @@ public class YsTradeDB {
 					pstmt.setTimestamp(29, new Timestamp(df.parse(ysTrade.getPayTime()).getTime()));
 				}
 				
-				if(count ==1) {
-					//更新
-					pstmt.setString(39, ysTrade.getTradeNO());
-				}
 				pstmt.executeUpdate();
 				for(int j=0;j<ysTradeDetails.size();j++) {
 					YsTradeDetail ysTradeDetail = ysTradeDetails.get(j);
-					pstmt2 = conn.prepareStatement(sqlQueryYsDetailList);
-					pstmt2.setString(1, ysTrade.getTradeNO());
-					pstmt2.setString(2, ysTradeDetail.getOrderNO());
-					rs = pstmt2.executeQuery();
 					int countDetail = 0;
-					while(rs.next()) {
-						countDetail = rs.getInt("cnt");
-					}
-					if(countDetail ==1) {
-						//更新
-						pstmt = conn.prepareStatement(sqlYsDetailListUpdate);
-					} else {
 						//插入
-						pstmt = conn.prepareStatement(sqlYsDetailListInsert);
-					}
+					pstmt = conn.prepareStatement(sqlYsDetailListInsert);
 					
 					pstmt.setString(1, ysTrade.getTradeNO());
 					pstmt.setString(2, ysTradeDetail.getOrderNO());
@@ -126,7 +99,7 @@ public class YsTradeDB {
 					pstmt.setString(4, ysTradeDetail.getGoodsName());
 					pstmt.setString(5, ysTradeDetail.getSpecCode());
 					pstmt.setString(6, ysTradeDetail.getSpecName());
-					pstmt.setInt(7, Integer.parseInt(ysTradeDetail.getGoodsCount()));
+					pstmt.setBigDecimal(7, new BigDecimal(ysTradeDetail.getGoodsCount()));
 					pstmt.setBigDecimal(8, new BigDecimal(ysTradeDetail.getPrice()));
 					pstmt.setBigDecimal(9, new BigDecimal(ysTradeDetail.getGoodsTotal()));
 					pstmt.setBigDecimal(10, new BigDecimal(ysTradeDetail.getDiscountMoney()));
@@ -134,12 +107,13 @@ public class YsTradeDB {
 					pstmt.setInt(12, Integer.parseInt(ysTradeDetail.getRefundStatus()));
 					if(countDetail ==1) {
 						//更新
-						pstmt.setString(12, ysTrade.getTradeNO());
-						pstmt.setString(13, ysTradeDetail.getOrderNO());
+						pstmt.setString(13, ysTrade.getTradeNO());
+						pstmt.setString(14, ysTradeDetail.getOrderNO());
 					}
 					pstmt.executeUpdate();
 				}
 			} catch (Exception e) {
+				logger.error(e.getMessage());
 				e.printStackTrace();
 			} finally {
 				if(pstmt != null) {
@@ -162,14 +136,6 @@ public class YsTradeDB {
 					try {
 						pstmt2.close();
 						pstmt2 = null;
-					} catch (SQLException e) {
-						e.printStackTrace();
-					}
-				}
-				if(rs != null) {
-					try {
-						rs.close();
-						rs = null;
 					} catch (SQLException e) {
 						e.printStackTrace();
 					}

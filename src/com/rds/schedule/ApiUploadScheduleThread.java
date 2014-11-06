@@ -20,6 +20,7 @@ public class ApiUploadScheduleThread extends TimerTask {
 	@Override
 	public void run() {
 		logger.info(task.getTaskName() + "执行开始");
+		System.out.println(task.getTaskName() + "执行开始");
 		if(task.getTaskName().equals("档案上传")) {
 			new UploadDeal().uploadApiSp(config);
 		} else if(task.getTaskName().equals("库存上传")) {
@@ -32,8 +33,10 @@ public class ApiUploadScheduleThread extends TimerTask {
 			new UploadDeal().uploadApiFlag(config);
 		} else if(task.getTaskName().equals("快递修改")) {
 			new UploadDeal().uploadApiLogistics(config);
+		} else if(task.getTaskName().equals("货品下载")) {
+			new UploadDeal().uploadApiGoods(config);
 		} 
-		
+		System.out.println(task.getTaskName() + "执行结束");
 		logger.info(task.getTaskName() + "执行结束");
 	}
 }
