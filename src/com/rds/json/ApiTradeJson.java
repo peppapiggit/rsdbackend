@@ -172,6 +172,8 @@ public class ApiTradeJson {
 						trade.setInvoiceContent(jsonTrade
 								.getString("InvoiceContent"));
 						trade.setNickName(jsonTrade.getString("NickName"));
+						trade.setLogisticsName(jsonTrade.getString("LogisticsName"));
+						trade.setLogisticsID(jsonTrade.getString("LogisticsID"));
 						trade.setSndTo(jsonTrade.getString("SndTo"));
 						trade.setCountry(jsonTrade.getString("Country"));
 						trade.setProvince(jsonTrade.getString("Province"));

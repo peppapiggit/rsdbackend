@@ -39,6 +39,9 @@ public class Trade {
 	private String ShopName;
 	private String TradeFlag;
 	private String ChkOperatorName;
+	private String logisticsName;
+	private String logisticsID;
+	
 	public String getTradeNO() {
 		return TradeNO;
 	}
@@ -266,6 +269,18 @@ public class Trade {
 	}
 	public void setChkOperatorName(String chkOperatorName) {
 		ChkOperatorName = chkOperatorName;
+	}
+	public String getLogisticsName() {
+		return logisticsName;
+	}
+	public void setLogisticsName(String logisticsName) {
+		this.logisticsName = logisticsName;
+	}
+	public String getLogisticsID() {
+		return logisticsID;
+	}
+	public void setLogisticsID(String logisticsID) {
+		this.logisticsID = logisticsID;
 	}
 	
 	

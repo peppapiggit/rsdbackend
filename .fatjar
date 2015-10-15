@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Thu Oct 30 15:42:01 CST 2014
+onejar.license.required=true
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=false
+jarname=rds_backend.jar
+manifest.mergeall=true
+manifest.mainclass=RdsStart
+manifest.file=<createnew>
+jarname.isextern=false
+onejar.expand=
+excludes=
+includes=

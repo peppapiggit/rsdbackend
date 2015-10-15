@@ -18,8 +18,8 @@ public class YsTradeDB {
 	static Logger logger = Logger.getLogger(YsTradeDB.class.getName());
 	public static void insertData(ArrayList<YsTradeInfo> ysTradeInfoes,Connection conn) {
 		String sqlYsTradeListInsert = "INSERT INTO API_YS_TradeList(TradeNO,CurStatus,ShopType,ShopName,NickName,CustomerName,PayID,RefundStatus,Country,Province,City,Town,Adr,Zip,Phone,Email,"
-				+ "CustomerRemark,Remark,PostFee,GoodsFee,TotalMoney,FavourableMoney,ChargeType,InvoiceTitle,InvoiceContent,CreateTime,LastModifyTime,TradeTime,PayTime) "
-				+ "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+				+ "CustomerRemark,Remark,PostFee,GoodsFee,TotalMoney,FavourableMoney,ChargeType,InvoiceTitle,InvoiceContent,CreateTime,LastModifyTime,TradeTime,PayTime,PayAccount) "
+				+ "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 		String sqlYsTradeListDelete = "delete from API_YS_TradeList where TradeNO = ?";
 		String sqlYsDetailListInsert = "INSERT INTO API_YS_DetailList(TradeNO,OrderNO,GoodsNO,GoodsName,SpecCode,SpecName,GoodsCount,Price,GoodsTotal,DiscountMoney,Remark,RefundStatus) values"
 				+ "(?,?,?,?,?,?,?,?,?,?,?,?)";
@@ -85,6 +85,7 @@ public class YsTradeDB {
 				} else {
 					pstmt.setTimestamp(29, new Timestamp(df.parse(ysTrade.getPayTime()).getTime()));
 				}
+				pstmt.setString(30, ysTrade.getPayAccount());
 				
 				pstmt.executeUpdate();
 				for(int j=0;j<ysTradeDetails.size();j++) {

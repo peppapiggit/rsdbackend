@@ -189,6 +189,7 @@ public class ApiYsTradeJson {
 						ysTrade.setCreateTime(jsonTrade.getString("CreateTime"));
 						ysTrade.setTradeTime(jsonTrade.getString("TradeTime"));
 						ysTrade.setPayTime(jsonTrade.getString("PayTime"));
+						ysTrade.setPayAccount(jsonTrade.getString("PayAccount"));
 						ysTrade.setLastModifyTime(jsonTrade
 								.getString("LastModifyTime"));
 						JSONObject jsonDetailList = jsonTrade

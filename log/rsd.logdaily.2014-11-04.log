@@ -1,0 +1,311 @@
+[2014-11-04 20:08:03 INFO ] [Thread-0] (com.rds.task.TaskMonitorThread:58) - 任务监控线程启动
+[2014-11-04 20:08:04 INFO ] [Thread-0] (com.rds.task.TaskMonitorThread:102) - 新增任务,任务名称订单下载
+[2014-11-04 20:08:04 INFO ] [Thread-0] (com.rds.schedule.ApiUploadSchedule:18) - 设置订单下载开始执行时间：10:20:01
+[2014-11-04 20:08:04 INFO ] [Thread-0] (com.rds.schedule.ApiUploadSchedule:21) - 订单下载实际开始执行时间：2014-11-04 20:09:04
+[2014-11-04 20:08:46 INFO ] [Thread-0] (com.rds.task.TaskMonitorThread:58) - 任务监控线程启动
+[2014-11-04 20:08:47 INFO ] [Thread-0] (com.rds.task.TaskMonitorThread:102) - 新增任务,任务名称订单下载
+[2014-11-04 20:08:47 INFO ] [Thread-0] (com.rds.schedule.ApiUploadSchedule:18) - 设置订单下载开始执行时间：10:20:01
+[2014-11-04 20:08:47 INFO ] [Thread-0] (com.rds.schedule.ApiUploadSchedule:21) - 订单下载实际开始执行时间：2014-11-04 20:09:47
+[2014-11-04 20:09:47 INFO ] [Timer-0] (com.rds.schedule.ApiUploadScheduleThread:22) - 订单下载执行开始
+[2014-11-04 20:09:47 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-10-30 21:51:33","EndTime":"2014-10-31 21:51:33","TradeStatus":"check_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:09:47 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-10-30 21:51:33","EndTime":"2014-10-31 21:51:33","TradeStatus":"check_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:09:47 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:09:47 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:ZTU3OGUyNjZjZGZiNmE5YWNkMzNlYTI3YzA1ZDMzMjY="}
+[2014-11-04 20:09:47 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:ZTU3OGUyNjZjZGZiNmE5YWNkMzNlYTI3YzA1ZDMzMjY=
+[2014-11-04 20:09:47 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:249) - 重试1次
+[2014-11-04 20:09:47 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-10-30 21:51:33","EndTime":"2014-10-31 21:51:33","TradeStatus":"check_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:09:47 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-10-30 21:51:33","EndTime":"2014-10-31 21:51:33","TradeStatus":"check_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:09:47 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:09:47 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:ZTU3OGUyNjZjZGZiNmE5YWNkMzNlYTI3YzA1ZDMzMjY="}
+[2014-11-04 20:09:47 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:ZTU3OGUyNjZjZGZiNmE5YWNkMzNlYTI3YzA1ZDMzMjY=
+[2014-11-04 20:09:47 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:249) - 重试2次
+[2014-11-04 20:09:47 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-10-30 21:51:33","EndTime":"2014-10-31 21:51:33","TradeStatus":"check_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:09:47 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-10-30 21:51:33","EndTime":"2014-10-31 21:51:33","TradeStatus":"check_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:09:47 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:09:47 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:ZTU3OGUyNjZjZGZiNmE5YWNkMzNlYTI3YzA1ZDMzMjY="}
+[2014-11-04 20:09:47 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:ZTU3OGUyNjZjZGZiNmE5YWNkMzNlYTI3YzA1ZDMzMjY=
+[2014-11-04 20:09:47 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-10-31 21:51:33","EndTime":"2014-11-01 21:51:33","TradeStatus":"check_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:09:47 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-10-31 21:51:33","EndTime":"2014-11-01 21:51:33","TradeStatus":"check_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:09:47 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:09:47 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:YmU5MmVhNzk3NzZlZTRmNjJlMzZhMzdhYWVmMGNlZTk="}
+[2014-11-04 20:09:47 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:YmU5MmVhNzk3NzZlZTRmNjJlMzZhMzdhYWVmMGNlZTk=
+[2014-11-04 20:09:47 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-11-01 21:51:33","EndTime":"2014-11-02 21:51:33","TradeStatus":"check_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:09:47 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-11-01 21:51:33","EndTime":"2014-11-02 21:51:33","TradeStatus":"check_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:09:47 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:09:47 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:NGNiYzlkM2QwMTliNzA0YzU0YTkyMzY0NTE2YTYxNTg="}
+[2014-11-04 20:09:47 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:NGNiYzlkM2QwMTliNzA0YzU0YTkyMzY0NTE2YTYxNTg=
+[2014-11-04 20:09:47 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-11-02 21:51:33","EndTime":"2014-11-03 21:51:33","TradeStatus":"check_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:09:47 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-11-02 21:51:33","EndTime":"2014-11-03 21:51:33","TradeStatus":"check_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:09:47 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:09:47 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:YjBkM2Q3ZjAxMjZiYTMwZDUwMGRkNTE1MjgyYzZiYzI="}
+[2014-11-04 20:09:47 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:YjBkM2Q3ZjAxMjZiYTMwZDUwMGRkNTE1MjgyYzZiYzI=
+[2014-11-04 20:09:47 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-11-03 21:51:33","EndTime":"2014-11-04 20:09:47","TradeStatus":"check_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:09:47 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-11-03 21:51:33","EndTime":"2014-11-04 20:09:47","TradeStatus":"check_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:09:47 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:NmFkN2VlZmY2MDEzZDVlYmZhOWVjY2YzZmNjMzhmZGM="}
+[2014-11-04 20:09:48 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:NmFkN2VlZmY2MDEzZDVlYmZhOWVjY2YzZmNjMzhmZGM=
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-10-30 21:51:33","EndTime":"2014-10-31 21:51:33","TradeStatus":"cancel_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-10-30 21:51:33","EndTime":"2014-10-31 21:51:33","TradeStatus":"cancel_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:NzdmMmFiNTY4YmY5ZTkzYTM4NjFhODNiYTZmZTQ3NDg="}
+[2014-11-04 20:09:48 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:NzdmMmFiNTY4YmY5ZTkzYTM4NjFhODNiYTZmZTQ3NDg=
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-10-31 21:51:33","EndTime":"2014-11-01 21:51:33","TradeStatus":"cancel_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-10-31 21:51:33","EndTime":"2014-11-01 21:51:33","TradeStatus":"cancel_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:YjU4OTY4OTMxNWQ5YjcwNDgzNzdhMGYyODI0MjljYjQ="}
+[2014-11-04 20:09:48 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:YjU4OTY4OTMxNWQ5YjcwNDgzNzdhMGYyODI0MjljYjQ=
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-11-01 21:51:33","EndTime":"2014-11-02 21:51:33","TradeStatus":"cancel_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-11-01 21:51:33","EndTime":"2014-11-02 21:51:33","TradeStatus":"cancel_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:MmZhOGY0Y2MyYWUyYTE1MjAzMDk4MmE3ZDk0ZTc1M2M="}
+[2014-11-04 20:09:48 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:MmZhOGY0Y2MyYWUyYTE1MjAzMDk4MmE3ZDk0ZTc1M2M=
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-11-02 21:51:33","EndTime":"2014-11-03 21:51:33","TradeStatus":"cancel_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-11-02 21:51:33","EndTime":"2014-11-03 21:51:33","TradeStatus":"cancel_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:MWEzMGY0ZGU1YjUyZTNkMDIzZTgwMTIxOTA4YjE1MGI="}
+[2014-11-04 20:09:48 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:MWEzMGY0ZGU1YjUyZTNkMDIzZTgwMTIxOTA4YjE1MGI=
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-11-03 21:51:33","EndTime":"2014-11-04 20:09:48","TradeStatus":"cancel_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-11-03 21:51:33","EndTime":"2014-11-04 20:09:48","TradeStatus":"cancel_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:OTQxNjg2M2YyNTM5YmZlNTA2MWJjYWY0NTUyMzVkN2Y="}
+[2014-11-04 20:09:48 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:OTQxNjg2M2YyNTM5YmZlNTA2MWJjYWY0NTUyMzVkN2Y=
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-10-30 21:51:34","EndTime":"2014-10-31 21:51:34","TradeStatus":"pre_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-10-30 21:51:34","EndTime":"2014-10-31 21:51:34","TradeStatus":"pre_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:OTg1ZDcwMGM0MTNjNDNkMWZmNWRiYTY5Mjg1NWZhYTE="}
+[2014-11-04 20:09:48 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:OTg1ZDcwMGM0MTNjNDNkMWZmNWRiYTY5Mjg1NWZhYTE=
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-10-31 21:51:34","EndTime":"2014-11-01 21:51:34","TradeStatus":"pre_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-10-31 21:51:34","EndTime":"2014-11-01 21:51:34","TradeStatus":"pre_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:MmEyNWI3M2QwMDY1Mzg4NjVjZWVlMWU4ODFlZDI5M2U="}
+[2014-11-04 20:09:48 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:MmEyNWI3M2QwMDY1Mzg4NjVjZWVlMWU4ODFlZDI5M2U=
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-11-01 21:51:34","EndTime":"2014-11-02 21:51:34","TradeStatus":"pre_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-11-01 21:51:34","EndTime":"2014-11-02 21:51:34","TradeStatus":"pre_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:YzBmYjQ2ZmQzZDBmNWNlZWU5N2M2Y2E0MzM1OWU3Zjk="}
+[2014-11-04 20:09:48 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:YzBmYjQ2ZmQzZDBmNWNlZWU5N2M2Y2E0MzM1OWU3Zjk=
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-11-02 21:51:34","EndTime":"2014-11-03 21:51:34","TradeStatus":"pre_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-11-02 21:51:34","EndTime":"2014-11-03 21:51:34","TradeStatus":"pre_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:YTdkYjdkNmMzNjNjOWI0M2IzMzMxZjdiYjkzMWExYjM="}
+[2014-11-04 20:09:48 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:YTdkYjdkNmMzNjNjOWI0M2IzMzMxZjdiYjkzMWExYjM=
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-11-03 21:51:34","EndTime":"2014-11-04 20:09:48","TradeStatus":"pre_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-11-03 21:51:34","EndTime":"2014-11-04 20:09:48","TradeStatus":"pre_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:NWZmZjI4NTVkNWMwODMwYWE2NWRmMmNiODJmYzkyYzg="}
+[2014-11-04 20:09:48 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:NWZmZjI4NTVkNWMwODMwYWE2NWRmMmNiODJmYzkyYzg=
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-10-30 21:51:34","EndTime":"2014-10-31 21:51:34","TradeStatus":"finance_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-10-30 21:51:34","EndTime":"2014-10-31 21:51:34","TradeStatus":"finance_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:MjhmY2UzYTFlYjRkNmU2NjExNzU5NDYwNDcxZDllZjE="}
+[2014-11-04 20:09:48 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:MjhmY2UzYTFlYjRkNmU2NjExNzU5NDYwNDcxZDllZjE=
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-10-31 21:51:34","EndTime":"2014-11-01 21:51:34","TradeStatus":"finance_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-10-31 21:51:34","EndTime":"2014-11-01 21:51:34","TradeStatus":"finance_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:MzAxNGQ0NzA5ZjBkZWY1NmEyNWJiNzliZGI0MDU1YWU="}
+[2014-11-04 20:09:48 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:MzAxNGQ0NzA5ZjBkZWY1NmEyNWJiNzliZGI0MDU1YWU=
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-11-01 21:51:34","EndTime":"2014-11-02 21:51:34","TradeStatus":"finance_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-11-01 21:51:34","EndTime":"2014-11-02 21:51:34","TradeStatus":"finance_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:Yjk0ZGJhNjc4NDE5ZDBmZDJjZjMzZDVjMGViOGI5MDM="}
+[2014-11-04 20:09:48 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:Yjk0ZGJhNjc4NDE5ZDBmZDJjZjMzZDVjMGViOGI5MDM=
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-11-02 21:51:34","EndTime":"2014-11-03 21:51:34","TradeStatus":"finance_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-11-02 21:51:34","EndTime":"2014-11-03 21:51:34","TradeStatus":"finance_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:M2Q4YTJkMzRlNTRhMTJkOTE1YzVlZWMwNjNjNzU1NTI="}
+[2014-11-04 20:09:48 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:M2Q4YTJkMzRlNTRhMTJkOTE1YzVlZWMwNjNjNzU1NTI=
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-11-03 21:51:34","EndTime":"2014-11-04 20:09:48","TradeStatus":"finance_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-11-03 21:51:34","EndTime":"2014-11-04 20:09:48","TradeStatus":"finance_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:MDg1NjQ1OGU4MjhjNWE2Y2QyNTQ3YzFkZDkxODhiOTc="}
+[2014-11-04 20:09:48 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:MDg1NjQ1OGU4MjhjNWE2Y2QyNTQ3YzFkZDkxODhiOTc=
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-10-30 21:51:34","EndTime":"2014-10-31 21:51:34","TradeStatus":"wait_send_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-10-30 21:51:34","EndTime":"2014-10-31 21:51:34","TradeStatus":"wait_send_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:Y2NiNGY4ZDdiYWQyYWZhMDcxMTRmYWQ1OTc2NDMxMjI="}
+[2014-11-04 20:09:48 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:Y2NiNGY4ZDdiYWQyYWZhMDcxMTRmYWQ1OTc2NDMxMjI=
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-10-31 21:51:34","EndTime":"2014-11-01 21:51:34","TradeStatus":"wait_send_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-10-31 21:51:34","EndTime":"2014-11-01 21:51:34","TradeStatus":"wait_send_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:N2M2Y2NhYjA3ZjRlNjRkYmUwMTUwOGQ1M2ExZWUxNWU="}
+[2014-11-04 20:09:48 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:N2M2Y2NhYjA3ZjRlNjRkYmUwMTUwOGQ1M2ExZWUxNWU=
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-11-01 21:51:34","EndTime":"2014-11-02 21:51:34","TradeStatus":"wait_send_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-11-01 21:51:34","EndTime":"2014-11-02 21:51:34","TradeStatus":"wait_send_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:OTdhODllOTJhOTQ2YTc4Y2FkMjU2ZjgyOWI0NTc0Y2U="}
+[2014-11-04 20:09:48 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:OTdhODllOTJhOTQ2YTc4Y2FkMjU2ZjgyOWI0NTc0Y2U=
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-11-02 21:51:34","EndTime":"2014-11-03 21:51:34","TradeStatus":"wait_send_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-11-02 21:51:34","EndTime":"2014-11-03 21:51:34","TradeStatus":"wait_send_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:ZjVhOWVjMmI4YmQxYzdmOGQ2NDhjNmRlNDQ3MzljNjM="}
+[2014-11-04 20:09:48 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:ZjVhOWVjMmI4YmQxYzdmOGQ2NDhjNmRlNDQ3MzljNjM=
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-11-03 21:51:34","EndTime":"2014-11-04 20:09:48","TradeStatus":"wait_send_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-11-03 21:51:34","EndTime":"2014-11-04 20:09:48","TradeStatus":"wait_send_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:09:48 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:09:49 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:M2M1MmE1MzVkZmE4NTA2MzEyNTJhODQ5ODY2NGUyM2I="}
+[2014-11-04 20:09:49 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:M2M1MmE1MzVkZmE4NTA2MzEyNTJhODQ5ODY2NGUyM2I=
+[2014-11-04 20:09:49 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-10-30 21:51:35","EndTime":"2014-10-31 21:51:35","TradeStatus":"over_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:09:49 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-10-30 21:51:35","EndTime":"2014-10-31 21:51:35","TradeStatus":"over_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:09:49 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:09:49 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:MzIxOTU3M2JkOTU2ZDI2ZWRhNTU4ODY0Zjg2YWJmMTc="}
+[2014-11-04 20:09:49 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:MzIxOTU3M2JkOTU2ZDI2ZWRhNTU4ODY0Zjg2YWJmMTc=
+[2014-11-04 20:09:49 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-10-31 21:51:35","EndTime":"2014-11-01 21:51:35","TradeStatus":"over_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:09:49 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-10-31 21:51:35","EndTime":"2014-11-01 21:51:35","TradeStatus":"over_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:09:49 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:09:49 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:NmI3Y2NmY2I3NGQxZGFiMDU3ODkwM2RmYTBlMjIwODQ="}
+[2014-11-04 20:09:49 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:NmI3Y2NmY2I3NGQxZGFiMDU3ODkwM2RmYTBlMjIwODQ=
+[2014-11-04 20:09:49 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-11-01 21:51:35","EndTime":"2014-11-02 21:51:35","TradeStatus":"over_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:09:49 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-11-01 21:51:35","EndTime":"2014-11-02 21:51:35","TradeStatus":"over_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:09:49 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:09:49 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:NDgwYWFjYjJhZjRlY2JkMzE1NjVhNmMxNjM1ZjVmMGM="}
+[2014-11-04 20:09:49 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:NDgwYWFjYjJhZjRlY2JkMzE1NjVhNmMxNjM1ZjVmMGM=
+[2014-11-04 20:09:49 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-11-02 21:51:35","EndTime":"2014-11-03 21:51:35","TradeStatus":"over_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:09:49 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-11-02 21:51:35","EndTime":"2014-11-03 21:51:35","TradeStatus":"over_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:09:49 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:09:49 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:MjgwMmM5NGE3MGM5ZDk1NGQyNzM2Zjg4MTNhZjlkY2I="}
+[2014-11-04 20:09:49 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:MjgwMmM5NGE3MGM5ZDk1NGQyNzM2Zjg4MTNhZjlkY2I=
+[2014-11-04 20:09:49 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-11-03 21:51:35","EndTime":"2014-11-04 20:09:49","TradeStatus":"over_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:09:49 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-11-03 21:51:35","EndTime":"2014-11-04 20:09:49","TradeStatus":"over_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:09:49 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:09:49 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:ZGQxZjk2YTFhNWQwYTk3MDkzMTRjN2IwMjgwMmUwM2Y="}
+[2014-11-04 20:09:49 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:ZGQxZjk2YTFhNWQwYTk3MDkzMTRjN2IwMjgwMmUwM2Y=
+[2014-11-04 20:09:49 INFO ] [Timer-0] (com.rds.upload.UploadDeal:97) - 耗时1955
+[2014-11-04 20:09:49 INFO ] [Timer-0] (com.rds.schedule.ApiUploadScheduleThread:40) - 订单下载执行结束
+[2014-11-04 20:13:36 INFO ] [Thread-0] (com.rds.task.TaskMonitorThread:58) - 任务监控线程启动
+[2014-11-04 20:13:37 INFO ] [Thread-0] (com.rds.task.TaskMonitorThread:102) - 新增任务,任务名称订单下载
+[2014-11-04 20:13:37 INFO ] [Thread-0] (com.rds.schedule.ApiUploadSchedule:18) - 设置订单下载开始执行时间：10:20:01
+[2014-11-04 20:13:37 INFO ] [Thread-0] (com.rds.schedule.ApiUploadSchedule:21) - 订单下载实际开始执行时间：2014-11-04 20:14:37
+[2014-11-04 20:14:37 INFO ] [Timer-0] (com.rds.schedule.ApiUploadScheduleThread:22) - 订单下载执行开始
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-11-04 20:09:47","EndTime":"2014-11-04 20:14:38","TradeStatus":"check_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-11-04 20:09:47","EndTime":"2014-11-04 20:14:38","TradeStatus":"check_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:NzBkMmQ2M2FiNzJmNDk0NGE3MGZkNzkwZTUyZjg0YTM="}
+[2014-11-04 20:14:38 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:NzBkMmQ2M2FiNzJmNDk0NGE3MGZkNzkwZTUyZjg0YTM=
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:249) - 重试1次
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-11-04 20:09:47","EndTime":"2014-11-04 20:14:38","TradeStatus":"check_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-11-04 20:09:47","EndTime":"2014-11-04 20:14:38","TradeStatus":"check_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:NzBkMmQ2M2FiNzJmNDk0NGE3MGZkNzkwZTUyZjg0YTM="}
+[2014-11-04 20:14:38 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:NzBkMmQ2M2FiNzJmNDk0NGE3MGZkNzkwZTUyZjg0YTM=
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:249) - 重试2次
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-11-04 20:09:47","EndTime":"2014-11-04 20:14:38","TradeStatus":"check_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-11-04 20:09:47","EndTime":"2014-11-04 20:14:38","TradeStatus":"check_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:NzBkMmQ2M2FiNzJmNDk0NGE3MGZkNzkwZTUyZjg0YTM="}
+[2014-11-04 20:14:38 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:NzBkMmQ2M2FiNzJmNDk0NGE3MGZkNzkwZTUyZjg0YTM=
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-11-04 20:09:48","EndTime":"2014-11-04 20:14:38","TradeStatus":"cancel_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-11-04 20:09:48","EndTime":"2014-11-04 20:14:38","TradeStatus":"cancel_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:Y2M1MTViMWUyNzA1NzFlMGIyZDk1N2VhNGEwZDU1ODI="}
+[2014-11-04 20:14:38 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:Y2M1MTViMWUyNzA1NzFlMGIyZDk1N2VhNGEwZDU1ODI=
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:249) - 重试1次
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-11-04 20:09:48","EndTime":"2014-11-04 20:14:38","TradeStatus":"cancel_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-11-04 20:09:48","EndTime":"2014-11-04 20:14:38","TradeStatus":"cancel_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:Y2M1MTViMWUyNzA1NzFlMGIyZDk1N2VhNGEwZDU1ODI="}
+[2014-11-04 20:14:38 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:Y2M1MTViMWUyNzA1NzFlMGIyZDk1N2VhNGEwZDU1ODI=
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:249) - 重试2次
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-11-04 20:09:48","EndTime":"2014-11-04 20:14:38","TradeStatus":"cancel_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-11-04 20:09:48","EndTime":"2014-11-04 20:14:38","TradeStatus":"cancel_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:Y2M1MTViMWUyNzA1NzFlMGIyZDk1N2VhNGEwZDU1ODI="}
+[2014-11-04 20:14:38 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:Y2M1MTViMWUyNzA1NzFlMGIyZDk1N2VhNGEwZDU1ODI=
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-11-04 20:09:48","EndTime":"2014-11-04 20:14:38","TradeStatus":"pre_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-11-04 20:09:48","EndTime":"2014-11-04 20:14:38","TradeStatus":"pre_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:YzNlNjNmODZjMjE4YWU4NTY3Yzk1ZTVkYjc5MmQwMWE="}
+[2014-11-04 20:14:38 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:YzNlNjNmODZjMjE4YWU4NTY3Yzk1ZTVkYjc5MmQwMWE=
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:249) - 重试1次
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-11-04 20:09:48","EndTime":"2014-11-04 20:14:38","TradeStatus":"pre_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-11-04 20:09:48","EndTime":"2014-11-04 20:14:38","TradeStatus":"pre_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:YzNlNjNmODZjMjE4YWU4NTY3Yzk1ZTVkYjc5MmQwMWE="}
+[2014-11-04 20:14:38 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:YzNlNjNmODZjMjE4YWU4NTY3Yzk1ZTVkYjc5MmQwMWE=
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:249) - 重试2次
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-11-04 20:09:48","EndTime":"2014-11-04 20:14:38","TradeStatus":"pre_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-11-04 20:09:48","EndTime":"2014-11-04 20:14:38","TradeStatus":"pre_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:YzNlNjNmODZjMjE4YWU4NTY3Yzk1ZTVkYjc5MmQwMWE="}
+[2014-11-04 20:14:38 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:YzNlNjNmODZjMjE4YWU4NTY3Yzk1ZTVkYjc5MmQwMWE=
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-11-04 20:09:48","EndTime":"2014-11-04 20:14:38","TradeStatus":"finance_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-11-04 20:09:48","EndTime":"2014-11-04 20:14:38","TradeStatus":"finance_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:14:38 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:14:39 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:ODZmYmVkMWZlYjAzMDk1NmRiNDExMmZkMjdiNzk5MDY="}
+[2014-11-04 20:14:39 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:ODZmYmVkMWZlYjAzMDk1NmRiNDExMmZkMjdiNzk5MDY=
+[2014-11-04 20:14:39 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:249) - 重试1次
+[2014-11-04 20:14:39 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-11-04 20:09:48","EndTime":"2014-11-04 20:14:38","TradeStatus":"finance_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:14:39 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-11-04 20:09:48","EndTime":"2014-11-04 20:14:38","TradeStatus":"finance_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:14:39 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:14:39 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:ODZmYmVkMWZlYjAzMDk1NmRiNDExMmZkMjdiNzk5MDY="}
+[2014-11-04 20:14:39 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:ODZmYmVkMWZlYjAzMDk1NmRiNDExMmZkMjdiNzk5MDY=
+[2014-11-04 20:14:39 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:249) - 重试2次
+[2014-11-04 20:14:39 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-11-04 20:09:48","EndTime":"2014-11-04 20:14:38","TradeStatus":"finance_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:14:39 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-11-04 20:09:48","EndTime":"2014-11-04 20:14:38","TradeStatus":"finance_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:14:39 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:14:39 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:ODZmYmVkMWZlYjAzMDk1NmRiNDExMmZkMjdiNzk5MDY="}
+[2014-11-04 20:14:39 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:ODZmYmVkMWZlYjAzMDk1NmRiNDExMmZkMjdiNzk5MDY=
+[2014-11-04 20:14:39 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-11-04 20:09:48","EndTime":"2014-11-04 20:14:39","TradeStatus":"wait_send_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:14:39 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-11-04 20:09:48","EndTime":"2014-11-04 20:14:39","TradeStatus":"wait_send_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:14:39 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:14:39 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:OTk3ZjIxYWRhZjlkOTc1ZDk5NjU0MWI4Y2I2ODVhM2E="}
+[2014-11-04 20:14:39 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:OTk3ZjIxYWRhZjlkOTc1ZDk5NjU0MWI4Y2I2ODVhM2E=
+[2014-11-04 20:14:39 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:249) - 重试1次
+[2014-11-04 20:14:39 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-11-04 20:09:48","EndTime":"2014-11-04 20:14:39","TradeStatus":"wait_send_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:14:39 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-11-04 20:09:48","EndTime":"2014-11-04 20:14:39","TradeStatus":"wait_send_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:14:39 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:14:39 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:OTk3ZjIxYWRhZjlkOTc1ZDk5NjU0MWI4Y2I2ODVhM2E="}
+[2014-11-04 20:14:39 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:OTk3ZjIxYWRhZjlkOTc1ZDk5NjU0MWI4Y2I2ODVhM2E=
+[2014-11-04 20:14:39 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:249) - 重试2次
+[2014-11-04 20:14:39 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-11-04 20:09:48","EndTime":"2014-11-04 20:14:39","TradeStatus":"wait_send_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:14:39 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-11-04 20:09:48","EndTime":"2014-11-04 20:14:39","TradeStatus":"wait_send_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:14:39 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:14:39 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:OTk3ZjIxYWRhZjlkOTc1ZDk5NjU0MWI4Y2I2ODVhM2E="}
+[2014-11-04 20:14:39 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:OTk3ZjIxYWRhZjlkOTc1ZDk5NjU0MWI4Y2I2ODVhM2E=
+[2014-11-04 20:14:39 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-11-04 20:09:49","EndTime":"2014-11-04 20:14:39","TradeStatus":"over_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:14:39 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-11-04 20:09:49","EndTime":"2014-11-04 20:14:39","TradeStatus":"over_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:14:39 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:14:39 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:N2RmZjdhMjE3NmQwZDdkNWQyMDNiN2E3ZmM5YWZjNzc="}
+[2014-11-04 20:14:39 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:N2RmZjdhMjE3NmQwZDdkNWQyMDNiN2E3ZmM5YWZjNzc=
+[2014-11-04 20:14:39 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:249) - 重试1次
+[2014-11-04 20:14:39 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-11-04 20:09:49","EndTime":"2014-11-04 20:14:39","TradeStatus":"over_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:14:39 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-11-04 20:09:49","EndTime":"2014-11-04 20:14:39","TradeStatus":"over_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:14:39 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:14:39 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:N2RmZjdhMjE3NmQwZDdkNWQyMDNiN2E3ZmM5YWZjNzc="}
+[2014-11-04 20:14:39 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:N2RmZjdhMjE3NmQwZDdkNWQyMDNiN2E3ZmM5YWZjNzc=
+[2014-11-04 20:14:39 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:249) - 重试2次
+[2014-11-04 20:14:39 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-11-04 20:09:49","EndTime":"2014-11-04 20:14:39","TradeStatus":"over_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:14:39 INFO ] [Timer-0] (com.rds.util.ApiUtil:25) - 发送签名内容:{"StartTime":"2014-11-04 20:09:49","EndTime":"2014-11-04 20:14:39","TradeStatus":"over_trade","PageNO":1,"PageSize":20}8f34ca639649cd7f7945596c105b5cce
+[2014-11-04 20:14:39 INFO ] [Timer-0] (com.rds.util.ApiUtil:33) - 签名:aaaaaa
+[2014-11-04 20:14:39 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:N2RmZjdhMjE3NmQwZDdkNWQyMDNiN2E3ZmM5YWZjNzc="}
+[2014-11-04 20:14:39 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:245) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:N2RmZjdhMjE3NmQwZDdkNWQyMDNiN2E3ZmM5YWZjNzc=
+[2014-11-04 20:14:39 INFO ] [Timer-0] (com.rds.upload.UploadDeal:97) - 耗时1284
+[2014-11-04 20:14:39 INFO ] [Timer-0] (com.rds.schedule.ApiUploadScheduleThread:40) - 订单下载执行结束
+[2014-11-04 20:20:43 INFO ] [Thread-0] (com.rds.task.TaskMonitorThread:58) - 任务监控线程启动
+[2014-11-04 20:20:44 INFO ] [Thread-0] (com.rds.task.TaskMonitorThread:102) - 新增任务,任务名称订单下载
+[2014-11-04 20:20:44 INFO ] [Thread-0] (com.rds.schedule.ApiUploadSchedule:18) - 设置订单下载开始执行时间：10:20:01
+[2014-11-04 20:20:44 INFO ] [Thread-0] (com.rds.schedule.ApiUploadSchedule:21) - 订单下载实际开始执行时间：2014-11-04 20:21:44
+[2014-11-04 20:20:51 INFO ] [Thread-0] (com.rds.task.TaskMonitorThread:58) - 任务监控线程启动
+[2014-11-04 20:20:53 INFO ] [Thread-0] (com.rds.task.TaskMonitorThread:102) - 新增任务,任务名称订单下载
+[2014-11-04 20:20:53 INFO ] [Thread-0] (com.rds.schedule.ApiUploadSchedule:18) - 设置订单下载开始执行时间：10:20:01
+[2014-11-04 20:20:53 INFO ] [Thread-0] (com.rds.schedule.ApiUploadSchedule:21) - 订单下载实际开始执行时间：2014-11-04 20:21:53
+[2014-11-04 20:21:53 INFO ] [Timer-0] (com.rds.schedule.ApiUploadScheduleThread:22) - 订单下载执行开始
+[2014-11-04 20:21:53 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-11-04 20:14:38","EndTime":"2014-11-04 20:21:53","TradeStatus":"check_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:21:53 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:ZWM3Njk1ZjQxMDQyNjFhNjExNmE3YjBkNDgwZjIyNTQ="}
+[2014-11-04 20:21:53 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:249) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:ZWM3Njk1ZjQxMDQyNjFhNjExNmE3YjBkNDgwZjIyNTQ=
+[2014-11-04 20:21:53 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-11-04 20:14:38","EndTime":"2014-11-04 20:21:53","TradeStatus":"cancel_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:21:53 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:YTExM2ZlODk3MWNkYjBlNTBkYzllOTNjMjZiNzU2ZjQ="}
+[2014-11-04 20:21:53 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:249) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:YTExM2ZlODk3MWNkYjBlNTBkYzllOTNjMjZiNzU2ZjQ=
+[2014-11-04 20:21:53 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-11-04 20:14:38","EndTime":"2014-11-04 20:21:53","TradeStatus":"pre_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:21:53 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:MzUwMTgzYmZiYWJhMDUxNDM5NDcxY2VhNGU5MDRhMjk="}
+[2014-11-04 20:21:53 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:249) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:MzUwMTgzYmZiYWJhMDUxNDM5NDcxY2VhNGU5MDRhMjk=
+[2014-11-04 20:21:53 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-11-04 20:14:38","EndTime":"2014-11-04 20:21:53","TradeStatus":"finance_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:21:53 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:Zjg1NTZlZTIyMzFhMjMzM2Y5MTA4NjlkZTIzNWRiODk="}
+[2014-11-04 20:21:53 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:249) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:Zjg1NTZlZTIyMzFhMjMzM2Y5MTA4NjlkZTIzNWRiODk=
+[2014-11-04 20:21:53 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-11-04 20:14:39","EndTime":"2014-11-04 20:21:53","TradeStatus":"wait_send_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:21:53 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:NjY0YzQxZmE3YzM4ZmJlNGUwMDFhYjczYjU3YTM1MmM="}
+[2014-11-04 20:21:53 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:249) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:NjY0YzQxZmE3YzM4ZmJlNGUwMDFhYjczYjU3YTM1MmM=
+[2014-11-04 20:21:53 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:129) - 发送内容{"StartTime":"2014-11-04 20:14:39","EndTime":"2014-11-04 20:21:53","TradeStatus":"over_trade","PageNO":1,"PageSize":20}
+[2014-11-04 20:21:53 INFO ] [Timer-0] (com.rds.json.ApiTradeJson:133) - 接收内容{"ResultCode":99,"ResultMsg":"\u7b7e\u540d\u9a8c\u8bc1\u5931\u8d25,Sign:YTc1OWY2YTBlZTFjNzQ3N2U4YzUxNDMyYmFlNjg2ZjE="}
+[2014-11-04 20:21:53 ERROR] [Timer-0] (com.rds.json.ApiTradeJson:249) - 下载订单信息失败,返回码99,返回信息：签名验证失败,Sign:YTc1OWY2YTBlZTFjNzQ3N2U4YzUxNDMyYmFlNjg2ZjE=
+[2014-11-04 20:21:53 INFO ] [Timer-0] (com.rds.upload.UploadDeal:97) - 耗时677
+[2014-11-04 20:21:53 INFO ] [Timer-0] (com.rds.schedule.ApiUploadScheduleThread:40) - 订单下载执行结束

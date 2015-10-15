@@ -19,8 +19,8 @@ public class TradeDB {
 	public static void insertData(ArrayList<TradeInfo> tradeInfoes,Connection conn) {
 		String sqlTradeListInsert = "INSERT INTO API_TradeList(TradeNO,TradeNO2,WarehouseNO,RegTime,TradeTime,PayTime,ChkTime,StockOutTime,SndTime,LastModifyTime,TradeStatus,RefundStatus,"
 				+ "bInvoice,InvoiceTitle,InvoiceContent,NickName,SndTo,Country,Province,City,Town,Adr,Tel,Zip,ChargeType,SellSkuCount,GoodsTotal,PostageTotal,FavourableTotal,"
-				+ "AllTotal,LogisticsCode,PostID,CustomerRemark,Remark,ShopType,ShopName,TradeFlag,ChkOperatorName) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?"
-				+ ",?,?,?,?,?,?,?,?,?,?,?,?)";
+				+ "AllTotal,LogisticsCode,PostID,CustomerRemark,Remark,ShopType,ShopName,TradeFlag,ChkOperatorName,LogisticsName,LogisticsID) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?"
+				+ ",?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 		String sqlTradeListDelete = "delete from API_TradeList where TradeNO = ?";
 		String sqlDetailListInsert = "INSERT INTO API_DetailList(TradeNO,SkuCode,SkuName,PlatformGoodsCode,PlatformGoodsName,PlatformSkuCode,PlatformSkuName,SellCount,SellPrice,DiscountMoney,bGift) values"
 				+ "(?,?,?,?,?,?,?,?,?,?,?)";
@@ -113,6 +113,8 @@ public class TradeDB {
 				pstmt.setString(36, trade.getShopName());
 				pstmt.setString(37, trade.getTradeFlag());
 				pstmt.setString(38, trade.getChkOperatorName());
+				pstmt.setString(39, trade.getLogisticsName());
+				pstmt.setString(40, trade.getLogisticsID());
 				pstmt.executeUpdate();
 				for(int j=0;j<tradeDetails.size();j++) {
 					TradeDetail tradeDetail = tradeDetails.get(j);

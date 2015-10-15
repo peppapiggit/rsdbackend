@@ -30,6 +30,7 @@ public class YsTrade {
 	private String LastModifyTime;
 	private String TradeTime;
 	private String PayTime;
+	private String payAccount;
 	public String getTradeNO() {
 		return TradeNO;
 	}
@@ -204,5 +205,12 @@ public class YsTrade {
 	public void setPayTime(String payTime) {
 		PayTime = payTime;
 	}
+	public String getPayAccount() {
+		return payAccount;
+	}
+	public void setPayAccount(String payAccount) {
+		this.payAccount = payAccount;
+	}
+	
 	
 }
