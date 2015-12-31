@@ -41,6 +41,25 @@ public class TaskDB {
 		} catch (SQLException e) {
 			logger.error(e.getMessage());
 			e.printStackTrace();
+		} finally {
+			if(rs!=null) {
+				try {
+					rs.close();
+					rs = null;
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			if(pstmt!=null) {
+				try {
+					pstmt.close();
+					pstmt = null;
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
 		}
 		return tasks;
 	}

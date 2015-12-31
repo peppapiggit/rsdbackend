@@ -49,6 +49,7 @@ public class ApiTradeJson {
 				cal1.setTime(startTime);
 				cal3.setTime(startTime);
 				cal2.setTime(endTime);
+				cal2.add(Calendar.MINUTE, -config.getBeforeCurTime());
 				if ((cal3.before(cal2)) == true) {
 					while (cal1.before(cal2) == true) {
 						cal1.add(Calendar.DAY_OF_MONTH, 1);
@@ -57,20 +58,22 @@ public class ApiTradeJson {
 									.getTime().getTime());
 							this.dealApi(startTime, nextStartTime,
 									rs.getString("TradeStatus"), id,
-									httpclient, conn, config, method, 1);
+									httpclient, conn, config, method, 1, true);
 							startTime = nextStartTime;
 						} else {
 							cal1.add(Calendar.DAY_OF_MONTH, -1);
 							startTime = new Timestamp(cal1.getTime().getTime());
-							this.dealApi(startTime, endTime,
-									rs.getString("TradeStatus"), id,
-									httpclient, conn, config, method, 1);
+							this.dealApi(startTime, new Timestamp(cal2
+									.getTime().getTime()), rs
+									.getString("TradeStatus"), id, httpclient,
+									conn, config, method, 1, true);
 							break;
 						}
 					}
 				}
 				// 更新本次处理时间
-				this.updateEndTime(id, conn, endTime);
+				this.updateEndTime(id, conn, new Timestamp(cal2.getTime()
+						.getTime()));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -116,7 +119,8 @@ public class ApiTradeJson {
 
 	public void dealApi(Timestamp startTime, Timestamp endTime,
 			String TradeStatus, int id, CloseableHttpClient httpclient,
-			Connection conn, Config config, String method, int pageNo) {
+			Connection conn, Config config, String method, int pageNo,
+			boolean firstOrNot) {
 		ArrayList<TradeInfo> tradeInfoes = new ArrayList<TradeInfo>();
 		JSONObject jsonObjSend = new JSONObject();
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -133,10 +137,17 @@ public class ApiTradeJson {
 		logger.info("接收内容" + returnInfo);
 		JSONObject jsonObject = (JSONObject) JSONObject.fromObject(returnInfo);
 		int returnCode = jsonObject.getInt("ResultCode");
-		
+
 		if (returnCode == 0) {
 			// 成功
 			int totalCount = jsonObject.getInt("TotalCount");
+			if (firstOrNot == true && pageNo == 1) {
+				// 计算页数
+				pageNo = (totalCount + pageSize - 1) / pageSize;
+				dealApi(startTime, endTime, TradeStatus, id, httpclient, conn,
+						config, method, pageNo, false);
+			}
+
 			if (totalCount > 0) {
 				if (jsonObject.containsKey("TradeList")) {
 					JSONObject jsonTradeList = jsonObject
@@ -172,7 +183,8 @@ public class ApiTradeJson {
 						trade.setInvoiceContent(jsonTrade
 								.getString("InvoiceContent"));
 						trade.setNickName(jsonTrade.getString("NickName"));
-						trade.setLogisticsName(jsonTrade.getString("LogisticsName"));
+						trade.setLogisticsName(jsonTrade
+								.getString("LogisticsName"));
 						trade.setLogisticsID(jsonTrade.getString("LogisticsID"));
 						trade.setSndTo(jsonTrade.getString("SndTo"));
 						trade.setCountry(jsonTrade.getString("Country"));
@@ -242,20 +254,24 @@ public class ApiTradeJson {
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
-					dealApi(startTime, endTime, TradeStatus, id, httpclient,
-							conn, config, method, pageNo + 1);
+					pageNo--;
+					if (pageNo >= 1) {
+						dealApi(startTime, endTime, TradeStatus, id,
+								httpclient, conn, config, method, pageNo, firstOrNot);
+					}
+
 				}
 
 			}
 		} else {
 			logger.error("下载订单信息失败,返回码" + returnCode + ",返回信息："
 					+ jsonObject.getString("ResultMsg"));
-			if(returnCode==9) {
-				executeCount ++;
-				if(executeCount<3) {
-					logger.info("重试"+executeCount+"次");
+			if (returnCode == 9) {
+				executeCount++;
+				if (executeCount < 3) {
+					logger.info("重试" + executeCount + "次");
 					dealApi(startTime, endTime, TradeStatus, id, httpclient,
-							conn, config, method, pageNo);
+							conn, config, method, pageNo, true);
 				}
 				executeCount = 0;
 			}

@@ -5,6 +5,7 @@ public class Config {
 	private String SellerID;
 	private String InterfaceID;
 	private String key;
+	private int beforeCurTime;
 	
 	public String getKey() {
 		return key;
@@ -29,6 +30,12 @@ public class Config {
 	}
 	public void setInterfaceID(String interfaceID) {
 		InterfaceID = interfaceID;
+	}
+	public int getBeforeCurTime() {
+		return beforeCurTime;
+	}
+	public void setBeforeCurTime(int beforeCurTime) {
+		this.beforeCurTime = beforeCurTime;
 	}
 	
 	

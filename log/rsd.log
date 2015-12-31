@@ -1,10 +1,10 @@
-[2015-10-15 11:23:02 INFO ] [Thread-0] (com.rds.task.TaskMonitorThread:58) - �������߳�����
-[2015-10-15 11:23:04 INFO ] [Thread-0] (com.rds.task.TaskMonitorThread:102) - ��������,�������Ƶ����ϴ�
-[2015-10-15 11:23:04 INFO ] [Thread-0] (com.rds.schedule.ApiUploadSchedule:18) - ���õ����ϴ���ʼִ��ʱ�䣺12:01:12
-[2015-10-15 11:23:04 INFO ] [Thread-0] (com.rds.schedule.ApiUploadSchedule:21) - �����ϴ�ʵ�ʿ�ʼִ��ʱ�䣺2015-10-15 12:01:12
-[2015-10-15 11:23:04 INFO ] [Thread-0] (com.rds.task.TaskMonitorThread:102) - ��������,�������ƿ���ϴ�
-[2015-10-15 11:23:04 INFO ] [Thread-0] (com.rds.schedule.ApiUploadSchedule:18) - ���ÿ���ϴ���ʼִ��ʱ�䣺12:30:01
-[2015-10-15 11:23:04 INFO ] [Thread-0] (com.rds.schedule.ApiUploadSchedule:21) - ����ϴ�ʵ�ʿ�ʼִ��ʱ�䣺2015-10-15 12:30:01
-[2015-10-15 11:23:04 INFO ] [Thread-0] (com.rds.task.TaskMonitorThread:102) - ��������,�������ƶ�������
-[2015-10-15 11:23:04 INFO ] [Thread-0] (com.rds.schedule.ApiUploadSchedule:18) - ���ö������ؿ�ʼִ��ʱ�䣺10:20:01
-[2015-10-15 11:23:04 INFO ] [Thread-0] (com.rds.schedule.ApiUploadSchedule:21) - ��������ʵ�ʿ�ʼִ��ʱ�䣺2015-10-15 11:24:04
+[2015-12-31 22:01:52 INFO ] [Thread-0] (com.rds.task.TaskMonitorThread:59) - 任务监控线程启动
+[2015-12-31 22:02:03 INFO ] [Thread-0] (com.rds.task.TaskMonitorThread:103) - 新增任务,任务名称档案上传
+[2015-12-31 22:02:03 INFO ] [Thread-0] (com.rds.schedule.ApiUploadSchedule:18) - 设置档案上传开始执行时间：12:01:12
+[2015-12-31 22:02:03 INFO ] [Thread-0] (com.rds.schedule.ApiUploadSchedule:21) - 档案上传实际开始执行时间：2015-12-31 22:03:03
+[2015-12-31 22:02:03 INFO ] [Thread-0] (com.rds.task.TaskMonitorThread:103) - 新增任务,任务名称库存上传
+[2015-12-31 22:02:03 INFO ] [Thread-0] (com.rds.schedule.ApiUploadSchedule:18) - 设置库存上传开始执行时间：12:30:01
+[2015-12-31 22:02:03 INFO ] [Thread-0] (com.rds.schedule.ApiUploadSchedule:21) - 库存上传实际开始执行时间：2016-01-01 12:30:01
+[2015-12-31 22:02:03 INFO ] [Thread-0] (com.rds.task.TaskMonitorThread:103) - 新增任务,任务名称订单下载
+[2015-12-31 22:02:03 INFO ] [Thread-0] (com.rds.schedule.ApiUploadSchedule:18) - 设置订单下载开始执行时间：10:20:01
+[2015-12-31 22:02:03 INFO ] [Thread-0] (com.rds.schedule.ApiUploadSchedule:21) - 订单下载实际开始执行时间：2015-12-31 22:03:03

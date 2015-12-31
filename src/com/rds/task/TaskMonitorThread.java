@@ -36,6 +36,7 @@ public class TaskMonitorThread implements Runnable {
 			config.setSellerID(p.getProperty("SellerID"));
 			config.setInterfaceID(p.getProperty("InterfaceID"));
 			config.setKey(p.getProperty("key"));
+			config.setBeforeCurTime(Integer.parseInt(p.getProperty("beforeCurTime")));
 			this.config = config;
 		} catch (Exception e) {
 			e.printStackTrace();
