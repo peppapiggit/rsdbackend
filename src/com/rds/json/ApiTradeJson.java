@@ -257,7 +257,7 @@ public class ApiTradeJson {
 					pageNo--;
 					if (pageNo >= 1) {
 						dealApi(startTime, endTime, TradeStatus, id,
-								httpclient, conn, config, method, pageNo, firstOrNot);
+								httpclient, conn, config, method, pageNo, false);
 					}
 
 				}
@@ -271,7 +271,7 @@ public class ApiTradeJson {
 				if (executeCount < 3) {
 					logger.info("重试" + executeCount + "次");
 					dealApi(startTime, endTime, TradeStatus, id, httpclient,
-							conn, config, method, pageNo, true);
+							conn, config, method, pageNo, firstOrNot);
 				}
 				executeCount = 0;
 			}
