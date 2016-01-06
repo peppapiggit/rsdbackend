@@ -144,117 +144,125 @@ public class ApiYsTradeJson {
 		if (returnCode == 0) {
 			// 成功
 			int totalCount = jsonObject.getInt("TotalCount");
-			if (firstOrNot == true && pageNo == 1) {
-				// 计算页数
-				pageNo = (totalCount + pageSize - 1) / pageSize;
-				dealApi(startTime, endTime, TradeStatus, id, httpclient, conn,
-						config, method, pageNo, false);
-			}
 			if (totalCount > 0) {
-				if (jsonObject.containsKey("TradeList")) {
-					JSONObject jsonTradeList = jsonObject
-							.getJSONObject("TradeList");
-					JSONArray jsonTradeArray = jsonTradeList
-							.getJSONArray("Trade");
-					int returnCount = jsonTradeArray.size();
-					for (int i = 0; i < returnCount; i++) {
-						YsTradeInfo ysTradeInfo = new YsTradeInfo();
-						ArrayList<YsTradeDetail> ysTradeDetails = new ArrayList<YsTradeDetail>();
-						YsTrade ysTrade = new YsTrade();
-						YsTradeDetail ysTradeDetail = null;
-						JSONObject jsonTrade = (JSONObject) jsonTradeArray
-								.get(i);
-						ysTrade.setTradeNO(jsonTrade.getString("TradeNO"));
-						ysTrade.setShopType(jsonTrade.getString("ShopType"));
-						ysTrade.setShopName(jsonTrade.getString("ShopName"));
-						ysTrade.setCurStatus(jsonTrade.getString("CurStatus"));
-						ysTrade.setRefundStatus(jsonTrade
-								.getString("RefundStatus"));
-						ysTrade.setPayID(jsonTrade.getString("PayID"));
-						ysTrade.setInvoiceTitle(jsonTrade
-								.getString("InvoiceTitle"));
-						ysTrade.setInvoiceContent(jsonTrade
-								.getString("InvoiceContent"));
-						ysTrade.setNickName(jsonTrade.getString("NickName"));
-						ysTrade.setCustomerName(jsonTrade
-								.getString("CustomerName"));
-						ysTrade.setCountry(jsonTrade.getString("Country"));
-						ysTrade.setProvince(jsonTrade.getString("Province"));
-						ysTrade.setCity(jsonTrade.getString("City"));
-						ysTrade.setTown(jsonTrade.getString("Town"));
-						ysTrade.setAdr(jsonTrade.getString("Adr"));
-						ysTrade.setPhone(jsonTrade.getString("Phone"));
-						ysTrade.setZip(jsonTrade.getString("Zip"));
-						ysTrade.setEmail(jsonTrade.getString("Email"));
-						ysTrade.setChargeType(jsonTrade.getString("ChargeType"));
-						ysTrade.setGoodsFee(jsonTrade.getString("GoodsFee"));
-						ysTrade.setPostFee(jsonTrade.getString("PostFee"));
-						ysTrade.setFavourableMoney(jsonTrade
-								.getString("FavourableMoney"));
-						ysTrade.setTotalMoney(jsonTrade.getString("TotalMoney"));
-						ysTrade.setCustomerRemark(jsonTrade
-								.getString("CustomerRemark"));
-						ysTrade.setRemark(jsonTrade.getString("Remark"));
-						ysTrade.setCreateTime(jsonTrade.getString("CreateTime"));
-						ysTrade.setTradeTime(jsonTrade.getString("TradeTime"));
-						ysTrade.setPayTime(jsonTrade.getString("PayTime"));
-						ysTrade.setPayAccount(jsonTrade.getString("PayAccount"));
-						ysTrade.setLastModifyTime(jsonTrade
-								.getString("LastModifyTime"));
-						JSONObject jsonDetailList = jsonTrade
-								.getJSONObject("ItemList");
-						JSONArray jsonDetailArray = jsonDetailList
-								.getJSONArray("Detail");
-						for (int j = 0; j < jsonDetailArray.size(); j++) {
-							ysTradeDetail = new YsTradeDetail();
-							JSONObject jsonDetail = (JSONObject) jsonDetailArray
-									.get(j);
-							ysTradeDetail.setTradeNO(jsonTrade
-									.getString("TradeNO"));
-							ysTradeDetail.setOrderNO(jsonDetail
-									.getString("OrderNO"));
-							ysTradeDetail.setGoodsNO(jsonDetail
-									.getString("GoodsNO"));
-							ysTradeDetail.setGoodsName(jsonDetail
-									.getString("GoodsName"));
-							ysTradeDetail.setSpecCode(jsonDetail
-									.getString("SpecCode"));
-							ysTradeDetail.setSpecName(jsonDetail
-									.getString("SpecName"));
-							ysTradeDetail.setGoodsCount(jsonDetail
-									.getString("GoodsCount"));
-							ysTradeDetail.setPrice(jsonDetail
-									.getString("Price"));
-							ysTradeDetail.setGoodsTotal(jsonDetail
-									.getString("GoodsTotal"));
-							ysTradeDetail.setDiscountMoney(jsonDetail
-									.getString("DiscountMoney"));
-							ysTradeDetail.setRemark(jsonDetail
-									.getString("Remark"));
-							ysTradeDetail.setRefundStatus(jsonDetail
+				if (firstOrNot == true && pageNo == 1) {
+					// 计算页数
+					pageNo = (totalCount + pageSize - 1) / pageSize;
+					dealApi(startTime, endTime, TradeStatus, id, httpclient,
+							conn, config, method, pageNo, false);
+				} else {
+					if (jsonObject.containsKey("TradeList")) {
+						JSONObject jsonTradeList = jsonObject
+								.getJSONObject("TradeList");
+						JSONArray jsonTradeArray = jsonTradeList
+								.getJSONArray("Trade");
+						int returnCount = jsonTradeArray.size();
+						for (int i = 0; i < returnCount; i++) {
+							YsTradeInfo ysTradeInfo = new YsTradeInfo();
+							ArrayList<YsTradeDetail> ysTradeDetails = new ArrayList<YsTradeDetail>();
+							YsTrade ysTrade = new YsTrade();
+							YsTradeDetail ysTradeDetail = null;
+							JSONObject jsonTrade = (JSONObject) jsonTradeArray
+									.get(i);
+							ysTrade.setTradeNO(jsonTrade.getString("TradeNO"));
+							ysTrade.setShopType(jsonTrade.getString("ShopType"));
+							ysTrade.setShopName(jsonTrade.getString("ShopName"));
+							ysTrade.setCurStatus(jsonTrade
+									.getString("CurStatus"));
+							ysTrade.setRefundStatus(jsonTrade
 									.getString("RefundStatus"));
-							ysTradeDetails.add(ysTradeDetail);
+							ysTrade.setPayID(jsonTrade.getString("PayID"));
+							ysTrade.setInvoiceTitle(jsonTrade
+									.getString("InvoiceTitle"));
+							ysTrade.setInvoiceContent(jsonTrade
+									.getString("InvoiceContent"));
+							ysTrade.setNickName(jsonTrade.getString("NickName"));
+							ysTrade.setCustomerName(jsonTrade
+									.getString("CustomerName"));
+							ysTrade.setCountry(jsonTrade.getString("Country"));
+							ysTrade.setProvince(jsonTrade.getString("Province"));
+							ysTrade.setCity(jsonTrade.getString("City"));
+							ysTrade.setTown(jsonTrade.getString("Town"));
+							ysTrade.setAdr(jsonTrade.getString("Adr"));
+							ysTrade.setPhone(jsonTrade.getString("Phone"));
+							ysTrade.setZip(jsonTrade.getString("Zip"));
+							ysTrade.setEmail(jsonTrade.getString("Email"));
+							ysTrade.setChargeType(jsonTrade
+									.getString("ChargeType"));
+							ysTrade.setGoodsFee(jsonTrade.getString("GoodsFee"));
+							ysTrade.setPostFee(jsonTrade.getString("PostFee"));
+							ysTrade.setFavourableMoney(jsonTrade
+									.getString("FavourableMoney"));
+							ysTrade.setTotalMoney(jsonTrade
+									.getString("TotalMoney"));
+							ysTrade.setCustomerRemark(jsonTrade
+									.getString("CustomerRemark"));
+							ysTrade.setRemark(jsonTrade.getString("Remark"));
+							ysTrade.setCreateTime(jsonTrade
+									.getString("CreateTime"));
+							ysTrade.setTradeTime(jsonTrade
+									.getString("TradeTime"));
+							ysTrade.setPayTime(jsonTrade.getString("PayTime"));
+							ysTrade.setPayAccount(jsonTrade
+									.getString("PayAccount"));
+							ysTrade.setLastModifyTime(jsonTrade
+									.getString("LastModifyTime"));
+							JSONObject jsonDetailList = jsonTrade
+									.getJSONObject("ItemList");
+							JSONArray jsonDetailArray = jsonDetailList
+									.getJSONArray("Detail");
+							for (int j = 0; j < jsonDetailArray.size(); j++) {
+								ysTradeDetail = new YsTradeDetail();
+								JSONObject jsonDetail = (JSONObject) jsonDetailArray
+										.get(j);
+								ysTradeDetail.setTradeNO(jsonTrade
+										.getString("TradeNO"));
+								ysTradeDetail.setOrderNO(jsonDetail
+										.getString("OrderNO"));
+								ysTradeDetail.setGoodsNO(jsonDetail
+										.getString("GoodsNO"));
+								ysTradeDetail.setGoodsName(jsonDetail
+										.getString("GoodsName"));
+								ysTradeDetail.setSpecCode(jsonDetail
+										.getString("SpecCode"));
+								ysTradeDetail.setSpecName(jsonDetail
+										.getString("SpecName"));
+								ysTradeDetail.setGoodsCount(jsonDetail
+										.getString("GoodsCount"));
+								ysTradeDetail.setPrice(jsonDetail
+										.getString("Price"));
+								ysTradeDetail.setGoodsTotal(jsonDetail
+										.getString("GoodsTotal"));
+								ysTradeDetail.setDiscountMoney(jsonDetail
+										.getString("DiscountMoney"));
+								ysTradeDetail.setRemark(jsonDetail
+										.getString("Remark"));
+								ysTradeDetail.setRefundStatus(jsonDetail
+										.getString("RefundStatus"));
+								ysTradeDetails.add(ysTradeDetail);
+							}
+							ysTradeInfo.setYsTrade(ysTrade);
+							ysTradeInfo.setYsTradeDetails(ysTradeDetails);
+							ysTradeInfoes.add(ysTradeInfo);
 						}
-						ysTradeInfo.setYsTrade(ysTrade);
-						ysTradeInfo.setYsTradeDetails(ysTradeDetails);
-						ysTradeInfoes.add(ysTradeInfo);
-					}
-					// 更新数据库
-					YsTradeDB.insertData(ysTradeInfoes, conn);
-					try {
-						Thread.sleep(2000);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-					pageNo--;
-					if (pageNo >= 1) {
-						dealApi(startTime, endTime, TradeStatus, id,
-								httpclient, conn, config, method, pageNo, false);
-					}
+						// 更新数据库
+						YsTradeDB.insertData(ysTradeInfoes, conn);
+						try {
+							Thread.sleep(2000);
+						} catch (InterruptedException e) {
+							e.printStackTrace();
+						}
+						pageNo--;
+						if (pageNo >= 1) {
+							dealApi(startTime, endTime, TradeStatus, id,
+									httpclient, conn, config, method, pageNo,
+									false);
+						}
 
+					}
 				}
-
 			}
+
 		} else {
 			logger.error("下载原始订单信息失败,返回码" + returnCode + ",返回信息："
 					+ jsonObject.getString("ResultMsg"));

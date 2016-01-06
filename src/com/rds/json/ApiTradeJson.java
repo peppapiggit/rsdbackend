@@ -141,126 +141,127 @@ public class ApiTradeJson {
 		if (returnCode == 0) {
 			// 成功
 			int totalCount = jsonObject.getInt("TotalCount");
-			if (firstOrNot == true && pageNo == 1) {
-				// 计算页数
-				pageNo = (totalCount + pageSize - 1) / pageSize;
-				dealApi(startTime, endTime, TradeStatus, id, httpclient, conn,
-						config, method, pageNo, false);
-			}
-
-			if (totalCount > 0) {
-				if (jsonObject.containsKey("TradeList")) {
-					JSONObject jsonTradeList = jsonObject
-							.getJSONObject("TradeList");
-					JSONArray jsonTradeArray = jsonTradeList
-							.getJSONArray("Trade");
-					int returnCount = jsonTradeArray.size();
-					for (int i = 0; i < returnCount; i++) {
-						TradeInfo tradeInfo = new TradeInfo();
-						ArrayList<TradeDetail> tradeDetails = new ArrayList<TradeDetail>();
-						Trade trade = new Trade();
-						TradeDetail tradeDetail = null;
-						JSONObject jsonTrade = (JSONObject) jsonTradeArray
-								.get(i);
-						trade.setTradeNO(jsonTrade.getString("TradeNO"));
-						trade.setTradeNO2(jsonTrade.getString("TradeNO2"));
-						trade.setWarehouseNO(jsonTrade.getString("WarehouseNO"));
-						trade.setRegTime(jsonTrade.getString("RegTime"));
-						trade.setTradeTime(jsonTrade.getString("TradeTime"));
-						trade.setPayTime(jsonTrade.getString("PayTime"));
-						trade.setChkTime(jsonTrade.getString("ChkTime"));
-						trade.setStockOutTime(jsonTrade
-								.getString("StockOutTime"));
-						trade.setSndTime(jsonTrade.getString("SndTime"));
-						trade.setLastModifyTime(jsonTrade
-								.getString("LastModifyTime"));
-						trade.setTradeStatus(jsonTrade.getString("TradeStatus"));
-						trade.setRefundStatus(jsonTrade
-								.getString("RefundStatus"));
-						trade.setbInvoice(jsonTrade.getString("bInvoice"));
-						trade.setInvoiceTitle(jsonTrade
-								.getString("InvoiceTitle"));
-						trade.setInvoiceContent(jsonTrade
-								.getString("InvoiceContent"));
-						trade.setNickName(jsonTrade.getString("NickName"));
-						trade.setLogisticsName(jsonTrade
-								.getString("LogisticsName"));
-						trade.setLogisticsID(jsonTrade.getString("LogisticsID"));
-						trade.setSndTo(jsonTrade.getString("SndTo"));
-						trade.setCountry(jsonTrade.getString("Country"));
-						trade.setProvince(jsonTrade.getString("Province"));
-						trade.setCity(jsonTrade.getString("City"));
-						trade.setTown(jsonTrade.getString("Town"));
-						trade.setAdr(jsonTrade.getString("Adr"));
-						trade.setTel(jsonTrade.getString("Tel"));
-						trade.setZip(jsonTrade.getString("Zip"));
-						trade.setChargeType(jsonTrade.getString("ChargeType"));
-						trade.setSellSkuCount(jsonTrade
-								.getString("SellSkuCount"));
-						trade.setGoodsTotal(jsonTrade.getString("GoodsTotal"));
-						trade.setPostageTotal(jsonTrade
-								.getString("PostageTotal"));
-						trade.setFavourableTotal(jsonTrade
-								.getString("FavourableTotal"));
-						trade.setAllTotal(jsonTrade.getString("AllTotal"));
-						trade.setLogisticsCode(jsonTrade
-								.getString("LogisticsCode"));
-						trade.setPostID(jsonTrade.getString("PostID"));
-						trade.setCustomerRemark(jsonTrade
-								.getString("CustomerRemark"));
-						trade.setRemark(jsonTrade.getString("Remark"));
-						trade.setShopType(jsonTrade.getString("ShopType"));
-						trade.setShopName(jsonTrade.getString("ShopName"));
-						trade.setTradeFlag(jsonTrade.getString("TradeFlag"));
-						trade.setChkOperatorName(jsonTrade
-								.getString("ChkOperatorName"));
-						JSONObject jsonDetailList = jsonTrade
-								.getJSONObject("DetailList");
-						JSONArray jsonDetailArray = jsonDetailList
-								.getJSONArray("Detail");
-						for (int j = 0; j < jsonDetailArray.size(); j++) {
-							tradeDetail = new TradeDetail();
-							JSONObject jsonDetail = (JSONObject) jsonDetailArray
-									.get(j);
-							tradeDetail.setSkuCode(jsonDetail
-									.getString("SkuCode"));
-							tradeDetail.setSkuName(jsonDetail
-									.getString("SkuName"));
-							tradeDetail.setPlatformGoodsCode(jsonDetail
-									.getString("PlatformGoodsCode"));
-							tradeDetail.setPlatformGoodsName(jsonDetail
-									.getString("PlatformGoodsName"));
-							tradeDetail.setPlatformSkuCode(jsonDetail
-									.getString("PlatformSkuCode"));
-							tradeDetail.setPlatformSkuName(jsonDetail
-									.getString("PlatformSkuName"));
-							tradeDetail.setSellCount(jsonDetail
-									.getString("SellCount"));
-							tradeDetail.setSellPrice(jsonDetail
-									.getString("SellPrice"));
-							tradeDetail.setDiscountMoney(jsonDetail
-									.getString("DiscountMoney"));
-							tradeDetail.setbGift(jsonDetail.getString("bGift"));
-							tradeDetails.add(tradeDetail);
+			if(totalCount > 0) {
+				if (firstOrNot == true && pageNo == 1) {
+					// 计算页数
+					pageNo = (totalCount + pageSize - 1) / pageSize;
+					dealApi(startTime, endTime, TradeStatus, id, httpclient, conn,
+							config, method, pageNo, false);
+				} else {
+					if (jsonObject.containsKey("TradeList")) {
+						JSONObject jsonTradeList = jsonObject
+								.getJSONObject("TradeList");
+						JSONArray jsonTradeArray = jsonTradeList
+								.getJSONArray("Trade");
+						int returnCount = jsonTradeArray.size();
+						for (int i = 0; i < returnCount; i++) {
+							TradeInfo tradeInfo = new TradeInfo();
+							ArrayList<TradeDetail> tradeDetails = new ArrayList<TradeDetail>();
+							Trade trade = new Trade();
+							TradeDetail tradeDetail = null;
+							JSONObject jsonTrade = (JSONObject) jsonTradeArray
+									.get(i);
+							trade.setTradeNO(jsonTrade.getString("TradeNO"));
+							trade.setTradeNO2(jsonTrade.getString("TradeNO2"));
+							trade.setWarehouseNO(jsonTrade.getString("WarehouseNO"));
+							trade.setRegTime(jsonTrade.getString("RegTime"));
+							trade.setTradeTime(jsonTrade.getString("TradeTime"));
+							trade.setPayTime(jsonTrade.getString("PayTime"));
+							trade.setChkTime(jsonTrade.getString("ChkTime"));
+							trade.setStockOutTime(jsonTrade
+									.getString("StockOutTime"));
+							trade.setSndTime(jsonTrade.getString("SndTime"));
+							trade.setLastModifyTime(jsonTrade
+									.getString("LastModifyTime"));
+							trade.setTradeStatus(jsonTrade.getString("TradeStatus"));
+							trade.setRefundStatus(jsonTrade
+									.getString("RefundStatus"));
+							trade.setbInvoice(jsonTrade.getString("bInvoice"));
+							trade.setInvoiceTitle(jsonTrade
+									.getString("InvoiceTitle"));
+							trade.setInvoiceContent(jsonTrade
+									.getString("InvoiceContent"));
+							trade.setNickName(jsonTrade.getString("NickName"));
+							trade.setLogisticsName(jsonTrade
+									.getString("LogisticsName"));
+							trade.setLogisticsID(jsonTrade.getString("LogisticsID"));
+							trade.setSndTo(jsonTrade.getString("SndTo"));
+							trade.setCountry(jsonTrade.getString("Country"));
+							trade.setProvince(jsonTrade.getString("Province"));
+							trade.setCity(jsonTrade.getString("City"));
+							trade.setTown(jsonTrade.getString("Town"));
+							trade.setAdr(jsonTrade.getString("Adr"));
+							trade.setTel(jsonTrade.getString("Tel"));
+							trade.setZip(jsonTrade.getString("Zip"));
+							trade.setChargeType(jsonTrade.getString("ChargeType"));
+							trade.setSellSkuCount(jsonTrade
+									.getString("SellSkuCount"));
+							trade.setGoodsTotal(jsonTrade.getString("GoodsTotal"));
+							trade.setPostageTotal(jsonTrade
+									.getString("PostageTotal"));
+							trade.setFavourableTotal(jsonTrade
+									.getString("FavourableTotal"));
+							trade.setAllTotal(jsonTrade.getString("AllTotal"));
+							trade.setLogisticsCode(jsonTrade
+									.getString("LogisticsCode"));
+							trade.setPostID(jsonTrade.getString("PostID"));
+							trade.setCustomerRemark(jsonTrade
+									.getString("CustomerRemark"));
+							trade.setRemark(jsonTrade.getString("Remark"));
+							trade.setShopType(jsonTrade.getString("ShopType"));
+							trade.setShopName(jsonTrade.getString("ShopName"));
+							trade.setTradeFlag(jsonTrade.getString("TradeFlag"));
+							trade.setChkOperatorName(jsonTrade
+									.getString("ChkOperatorName"));
+							JSONObject jsonDetailList = jsonTrade
+									.getJSONObject("DetailList");
+							JSONArray jsonDetailArray = jsonDetailList
+									.getJSONArray("Detail");
+							for (int j = 0; j < jsonDetailArray.size(); j++) {
+								tradeDetail = new TradeDetail();
+								JSONObject jsonDetail = (JSONObject) jsonDetailArray
+										.get(j);
+								tradeDetail.setSkuCode(jsonDetail
+										.getString("SkuCode"));
+								tradeDetail.setSkuName(jsonDetail
+										.getString("SkuName"));
+								tradeDetail.setPlatformGoodsCode(jsonDetail
+										.getString("PlatformGoodsCode"));
+								tradeDetail.setPlatformGoodsName(jsonDetail
+										.getString("PlatformGoodsName"));
+								tradeDetail.setPlatformSkuCode(jsonDetail
+										.getString("PlatformSkuCode"));
+								tradeDetail.setPlatformSkuName(jsonDetail
+										.getString("PlatformSkuName"));
+								tradeDetail.setSellCount(jsonDetail
+										.getString("SellCount"));
+								tradeDetail.setSellPrice(jsonDetail
+										.getString("SellPrice"));
+								tradeDetail.setDiscountMoney(jsonDetail
+										.getString("DiscountMoney"));
+								tradeDetail.setbGift(jsonDetail.getString("bGift"));
+								tradeDetails.add(tradeDetail);
+							}
+							tradeInfo.setTrade(trade);
+							tradeInfo.setTradeDetails(tradeDetails);
+							tradeInfoes.add(tradeInfo);
 						}
-						tradeInfo.setTrade(trade);
-						tradeInfo.setTradeDetails(tradeDetails);
-						tradeInfoes.add(tradeInfo);
-					}
-					// 更新数据库
-					TradeDB.insertData(tradeInfoes, conn);
-					try {
-						Thread.sleep(2000);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-					pageNo--;
-					if (pageNo >= 1) {
-						dealApi(startTime, endTime, TradeStatus, id,
-								httpclient, conn, config, method, pageNo, false);
-					}
+						// 更新数据库
+						TradeDB.insertData(tradeInfoes, conn);
+						try {
+							Thread.sleep(2000);
+						} catch (InterruptedException e) {
+							e.printStackTrace();
+						}
+						pageNo--;
+						if (pageNo >= 1) {
+							dealApi(startTime, endTime, TradeStatus, id,
+									httpclient, conn, config, method, pageNo, false);
+						}
 
+					}
 				}
+				
 
 			}
 		} else {
