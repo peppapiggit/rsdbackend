@@ -141,12 +141,12 @@ public class ApiTradeJson {
 		if (returnCode == 0) {
 			// 成功
 			int totalCount = jsonObject.getInt("TotalCount");
-			if(totalCount > 0) {
+			if (totalCount > 0) {
 				if (firstOrNot == true && pageNo == 1) {
 					// 计算页数
 					pageNo = (totalCount + pageSize - 1) / pageSize;
-					dealApi(startTime, endTime, TradeStatus, id, httpclient, conn,
-							config, method, pageNo, false);
+					dealApi(startTime, endTime, TradeStatus, id, httpclient,
+							conn, config, method, pageNo, false);
 				} else {
 					if (jsonObject.containsKey("TradeList")) {
 						JSONObject jsonTradeList = jsonObject
@@ -163,7 +163,8 @@ public class ApiTradeJson {
 									.get(i);
 							trade.setTradeNO(jsonTrade.getString("TradeNO"));
 							trade.setTradeNO2(jsonTrade.getString("TradeNO2"));
-							trade.setWarehouseNO(jsonTrade.getString("WarehouseNO"));
+							trade.setWarehouseNO(jsonTrade
+									.getString("WarehouseNO"));
 							trade.setRegTime(jsonTrade.getString("RegTime"));
 							trade.setTradeTime(jsonTrade.getString("TradeTime"));
 							trade.setPayTime(jsonTrade.getString("PayTime"));
@@ -173,7 +174,8 @@ public class ApiTradeJson {
 							trade.setSndTime(jsonTrade.getString("SndTime"));
 							trade.setLastModifyTime(jsonTrade
 									.getString("LastModifyTime"));
-							trade.setTradeStatus(jsonTrade.getString("TradeStatus"));
+							trade.setTradeStatus(jsonTrade
+									.getString("TradeStatus"));
 							trade.setRefundStatus(jsonTrade
 									.getString("RefundStatus"));
 							trade.setbInvoice(jsonTrade.getString("bInvoice"));
@@ -184,7 +186,8 @@ public class ApiTradeJson {
 							trade.setNickName(jsonTrade.getString("NickName"));
 							trade.setLogisticsName(jsonTrade
 									.getString("LogisticsName"));
-							trade.setLogisticsID(jsonTrade.getString("LogisticsID"));
+							trade.setLogisticsID(jsonTrade
+									.getString("LogisticsID"));
 							trade.setSndTo(jsonTrade.getString("SndTo"));
 							trade.setCountry(jsonTrade.getString("Country"));
 							trade.setProvince(jsonTrade.getString("Province"));
@@ -193,10 +196,12 @@ public class ApiTradeJson {
 							trade.setAdr(jsonTrade.getString("Adr"));
 							trade.setTel(jsonTrade.getString("Tel"));
 							trade.setZip(jsonTrade.getString("Zip"));
-							trade.setChargeType(jsonTrade.getString("ChargeType"));
+							trade.setChargeType(jsonTrade
+									.getString("ChargeType"));
 							trade.setSellSkuCount(jsonTrade
 									.getString("SellSkuCount"));
-							trade.setGoodsTotal(jsonTrade.getString("GoodsTotal"));
+							trade.setGoodsTotal(jsonTrade
+									.getString("GoodsTotal"));
 							trade.setPostageTotal(jsonTrade
 									.getString("PostageTotal"));
 							trade.setFavourableTotal(jsonTrade
@@ -239,7 +244,8 @@ public class ApiTradeJson {
 										.getString("SellPrice"));
 								tradeDetail.setDiscountMoney(jsonDetail
 										.getString("DiscountMoney"));
-								tradeDetail.setbGift(jsonDetail.getString("bGift"));
+								tradeDetail.setbGift(jsonDetail
+										.getString("bGift"));
 								tradeDetails.add(tradeDetail);
 							}
 							tradeInfo.setTrade(trade);
@@ -256,12 +262,12 @@ public class ApiTradeJson {
 						pageNo--;
 						if (pageNo >= 1) {
 							dealApi(startTime, endTime, TradeStatus, id,
-									httpclient, conn, config, method, pageNo, false);
+									httpclient, conn, config, method, pageNo,
+									false);
 						}
 
 					}
 				}
-				
 
 			}
 		} else {
