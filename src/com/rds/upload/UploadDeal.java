@@ -12,8 +12,10 @@ import com.rds.json.APiLogisticsJson;
 import com.rds.json.ApiFlagJson;
 import com.rds.json.ApiGoodsJson;
 import com.rds.json.ApiKcbJson;
+import com.rds.json.ApiOutOrderJson;
 import com.rds.json.ApiSpJson;
 import com.rds.json.ApiTradeJson;
+import com.rds.json.ApiWarehouseJson;
 import com.rds.json.ApiYsTradeJson;
 import com.rds.util.ConnectionSource;
 import com.rs.model.Config;
@@ -114,6 +116,70 @@ public class UploadDeal {
 			}
 		}
 	}
+	
+	// 库存下载
+		public void uploadApiHouseware(Config config) {
+			Connection conn = null;
+			CloseableHttpClient httpclient = null;
+			try {
+				conn = ConnectionSource.getConnection();
+				if (conn != null) {
+					httpclient = HttpClients.createDefault();
+					long startTime = System.currentTimeMillis();
+					new ApiWarehouseJson().deal(httpclient, conn, config,
+							"QueryStorage");
+					logger.info("耗时" + (System.currentTimeMillis() - startTime));
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				try {
+					httpclient.close();
+					try {
+						if (conn != null) {
+							conn.close();
+							conn = null;
+						}
+					} catch (SQLException e) {
+						e.printStackTrace();
+					}
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		
+		// 查询详细出库单
+		public void downloadOutOrder(Config config) {
+			Connection conn = null;
+			CloseableHttpClient httpclient = null;
+			try {
+				conn = ConnectionSource.getConnection();
+				if (conn != null) {
+					httpclient = HttpClients.createDefault();
+					long startTime = System.currentTimeMillis();
+					new ApiOutOrderJson().deal(httpclient, conn, config,
+							"QueryStockoutOrder");
+					logger.info("耗时" + (System.currentTimeMillis() - startTime));
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				try {
+					httpclient.close();
+					try {
+						if (conn != null) {
+							conn.close();
+							conn = null;
+						}
+					} catch (SQLException e) {
+						e.printStackTrace();
+					}
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
 
 	// 原始订单下载
 	public void uploadYsApiTrade(Config config) {

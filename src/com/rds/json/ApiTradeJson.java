@@ -25,7 +25,7 @@ import com.rs.model.TradeInfo;
 
 public class ApiTradeJson {
 	static Logger logger = Logger.getLogger(ApiTradeJson.class.getName());
-	final int pageSize = 20;
+	final int pageSize = 40;
 	static int executeCount = 0;
 
 	public void deal(CloseableHttpClient httpclient, Connection conn,
@@ -255,7 +255,7 @@ public class ApiTradeJson {
 						// 更新数据库
 						TradeDB.insertData(tradeInfoes, conn);
 						try {
-							Thread.sleep(2000);
+							Thread.sleep(1000);
 						} catch (InterruptedException e) {
 							e.printStackTrace();
 						}

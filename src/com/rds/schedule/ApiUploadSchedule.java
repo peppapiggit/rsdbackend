@@ -19,7 +19,7 @@ public class ApiUploadSchedule {
 		Date exeTime = new DateUtil().getExeTime(task.getStartTime(), task.getTaskType());
 		DateFormat fmt =new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");       
 		logger.info(task.getTaskName()+"实际开始执行时间："+fmt.format(exeTime));
-		timer.scheduleAtFixedRate(new ApiUploadScheduleThread(task,config), exeTime, task.getPeriod()*60*1000);
+		timer.scheduleAtFixedRate(new ApiUploadScheduleThread(task,config), exeTime, task.getPeriod()*10*1000);
 		
 		}
 	

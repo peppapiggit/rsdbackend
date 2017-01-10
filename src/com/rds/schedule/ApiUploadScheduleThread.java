@@ -35,7 +35,11 @@ public class ApiUploadScheduleThread extends TimerTask {
 			new UploadDeal().uploadApiLogistics(config);
 		} else if(task.getTaskName().equals("货品下载")) {
 			new UploadDeal().uploadApiGoods(config);
-		} 
+		} else if(task.getTaskName().equals("库存下载")) {
+			new UploadDeal().uploadApiHouseware(config);
+		} else if(task.getTaskName().equals("查询详细出库单")) {
+			new UploadDeal().downloadOutOrder(config);
+		}
 		System.out.println(task.getTaskName() + "执行结束");
 		logger.info(task.getTaskName() + "执行结束");
 	}
